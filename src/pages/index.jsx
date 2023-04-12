@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/pages/Home.module.scss";
 
+// main layout
 import MainLayout from "@/layouts/mainLayout";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <MainLayout>
-          <p>Sono la home</p>
+          <h1>Home</h1>
         </MainLayout>
       </main>
     </>

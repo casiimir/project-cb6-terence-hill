@@ -3,7 +3,7 @@ import MainLayout from "@/layouts/mainLayout";
 const About = () => {
   return (
     <MainLayout>
-      <p>Sono la pagina About</p>
+      <h1>About</h1>
     </MainLayout>
   );
 };

@@ -4,7 +4,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <div className={styles.Navbar}>
-      <h3>Sono navbar</h3>
+      <h3>NAVBAR</h3>
       <ul className={styles.menu}>
         <li>
           <Link href="/">Home</Link>
