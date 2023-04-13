@@ -4,11 +4,11 @@ import styles from "./mainLayout.module.scss";
 
 const MainLayout = ({ children }) => {
   return (
-    <>
+    <div className={styles.MainLayout}>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 
