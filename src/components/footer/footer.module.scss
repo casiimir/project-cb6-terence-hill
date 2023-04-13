@@ -1,11 +1,49 @@
 .Footer {
   width: 100%;
-  height: 15vh;
-  border: 1px solid;
+  // height: vh;
+  // border: 1px solid;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   position: absolute;
   bottom: 0;
   left: 0;
+  padding: 30px 20px;
+
+  .upper {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      margin: 2px 0 4px 0;
+    }
+
+    p {
+      font-size: $didascalia-mobile;
+      font-weight: 300;
+      width: 160px;
+    }
+
+    ul {
+      list-style: none;
+      a {
+        font-size: $didascalia-mobile;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .line {
+    border-width: 0.5px;
+  }
+
+  .down {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: $didascalia-mobile;
+      font-weight: 300;
+    }
+  }
 }
