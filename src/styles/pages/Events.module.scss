@@ -1,0 +1,10 @@
+@import "../../styles/variables/all.scss";
+
+.Events {
+  p {
+    color: $orange;
+    font-size: $body-mobile;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
