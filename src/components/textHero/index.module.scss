@@ -1,0 +1,17 @@
+.TextHero {
+  width: 100%;
+  padding: 0 20px;
+  margin: 100px 0 80px 0;
+
+  .title {
+    font-size: $h1-mobile;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    font-size: $body-mobile;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+}
