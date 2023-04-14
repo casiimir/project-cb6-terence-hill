@@ -1,18 +1,21 @@
 .Footer {
   width: 100%;
-  // height: vh;
-  // border: 1px solid;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
   padding: 30px 20px;
 
   .upper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    .left__section {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     .logo {
       margin: 2px 0 4px 0;
@@ -24,7 +27,7 @@
       width: 160px;
     }
 
-    ul {
+    .link {
       list-style: none;
       a {
         font-size: $didascalia-mobile;
@@ -43,6 +46,43 @@
 
     p {
       font-size: $didascalia-mobile;
+      font-weight: 300;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Footer {
+    .logo {
+      width: 150px;
+      height: 150px;
+    }
+
+    .left__section {
+      p {
+        font-size: $didascalia-desktop;
+      }
+    }
+
+    .link {
+      list-style: none;
+      li {
+        font-size: 20px;
+        font-weight: 300;
+
+        a {
+          font-size: 100px;
+        }
+      }
+    }
+  }
+
+  .down {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: $didascalia-desktop;
       font-weight: 300;
     }
   }

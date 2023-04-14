@@ -38,6 +38,11 @@
 
 @media screen and (min-width: 768px) {
   .BuyTicketSection {
+    height: 40vh;
+
+    .textSection {
+      top: 60px;
+    }
     .title {
       font-size: $h3-desktop;
     }
