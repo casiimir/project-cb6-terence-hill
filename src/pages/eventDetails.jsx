@@ -350,6 +350,12 @@ export default function EventDetails() {
     },
   };
 
+  function deleteSeconds(time) {
+    let timeArray = time.split(":");
+    let newTime = timeArray[0] + ":" + timeArray[1];
+    return newTime;
+  }
+
   return (
     <>
       <Head>
@@ -378,11 +384,13 @@ export default function EventDetails() {
             <ul>
               <li>
                 <FiCalendar />
-                <p>{event.dates.start.localDate}</p>
+                <p>
+                  {event.dates.start.localDate.split("-").reverse().join("-")}
+                </p>
               </li>
               <li>
                 <FiClock />
-                <p>{event.dates.start.localTime}</p>
+                <p>{deleteSeconds(event.dates.start.localTime)}</p>
               </li>
               <li>
                 <FiMapPin />
@@ -395,8 +403,17 @@ export default function EventDetails() {
             <div className={styles.description}>
               <h3>Descrizione</h3>
               <p>
-                {`Non perdere l'opportunità di assistere all'evento ${event.name},
-                in programma il ${event.dates.start.localDate} presso ${event._embedded.venues[0].name} alle ${event.dates.start.localTime}. Preparati a vivere un'esperienza
+                {`Non perdere l'opportunità di assistere all'evento ${
+                  event.name
+                },
+                in programma il ${event.dates.start.localDate
+                  .split("-")
+                  .reverse()
+                  .join("-")} presso ${
+                  event._embedded.venues[0].name
+                } alle ${deleteSeconds(
+                  event.dates.start.localTime
+                )}. Preparati a vivere un'esperienza
                 unica nel suo genere, con un artista di fama internazionale.
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
               </p>
