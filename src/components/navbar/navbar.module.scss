@@ -2,6 +2,7 @@
   width: 100%;
   height: 10vh;
   color: $white;
+  background-color: rgba(8, 8, 8, 0.642);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,6 +42,7 @@
 
     .nav {
       display: flex;
+      align-items: center;
       gap: 50px;
 
       .navItem {
@@ -50,9 +52,22 @@
       }
     }
 
+    .navItem:last-child {
+      border-radius: 8px;
+      background-color: rgba(6, 6, 6, 0.304);
+      padding: 8px 12px;
+    }
+
     .search__section {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      gap: 20px;
+
+      .loginBtn,
+      .searchBtn {
+        font-size: 25px;
+        cursor: pointer;
+      }
     }
   }
 }

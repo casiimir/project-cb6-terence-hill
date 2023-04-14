@@ -24,7 +24,7 @@ const HeroImage = () => {
           alt="hero image"
           priority
         />
-        <p className={styles.text}>Teatro</p>
+        <p className={styles.text}>Arte & Teatro</p>
       </div>
       <div className={styles.festival__card}>
         <Image
@@ -36,6 +36,17 @@ const HeroImage = () => {
           priority
         />
         <p className={styles.text}>Festival</p>
+      </div>
+      <div className={styles.festival__card}>
+        <Image
+          className={styles.img}
+          src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
+          width={1000}
+          height={300}
+          alt="hero image"
+          priority
+        />
+        <p className={styles.text}>Sport</p>
       </div>
 
       {/* mobile */}

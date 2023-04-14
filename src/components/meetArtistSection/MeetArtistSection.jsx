@@ -15,8 +15,8 @@ const MeetArtistSection = () => {
       <div className={styles.textContent}>
         <h3 className={styles.title}>Incontra i tuoi artisti preferiti.</h3>
         <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,
-          consequuntur.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+          quis.
         </p>
       </div>
     </div>
