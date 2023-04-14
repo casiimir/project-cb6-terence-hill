@@ -2,12 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 
-import styles from "@/styles/pages/EventDetails.module.scss";
+import styles from "@/styles/pages/Event.module.scss";
 
 // main layout
 import MainLayout from "@/layouts/mainLayout";
 
+// dati fetch
+import { useContext } from "react";
+import { DataContext } from "@/store/DataContext";
+
 export default function EventDetails() {
+  const items = useContext(DataContext);
+
   const event = {
     name: "Imagine Dragons - Mercury World Tour",
     type: "event",
@@ -380,6 +386,7 @@ export default function EventDetails() {
               <h2 className={styles.title}>{event.name}</h2>
             </div>
           </div>
+          {console.log(items)}
           <div className={styles.info}>
             <ul>
               <li>
