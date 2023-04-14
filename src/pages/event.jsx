@@ -6,6 +6,7 @@ import styles from "@/styles/pages/Event.module.scss";
 
 // main layout
 import MainLayout from "@/layouts/mainLayout";
+import CtaButton from "@/components/ctaButton";
 
 // dati fetch
 import { useContext } from "react";
@@ -425,6 +426,7 @@ export default function EventDetails() {
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
               </p>
             </div>
+            <CtaButton text={"COMPRA IL BIGLIETTO"} />
           </div>
         </MainLayout>
       </main>

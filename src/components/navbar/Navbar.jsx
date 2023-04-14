@@ -15,7 +15,12 @@ const Navbar = () => {
         priority
       />
       <ul className={styles.nav}>
-        <li className={styles.navItem}>Home</li>
+        <li className={styles.navItem}>
+          <Link href="/">Home</Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link href="/events">Eventi</Link>
+        </li>
         <li className={styles.navItem}>About</li>
         {/* <li className={styles.navItem}>Contacts</li> */}
         <li className={styles.navItem}>Newsletter</li>
