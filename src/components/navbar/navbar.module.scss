@@ -26,4 +26,33 @@
       background-color: $white;
     }
   }
+
+  .nav,
+  .search__section {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Navbar {
+    .hamburgerMenu {
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 50px;
+
+      .navItem {
+        list-style: none;
+        font-size: $didascalia-desktop;
+        cursor: pointer;
+      }
+    }
+
+    .search__section {
+      display: flex;
+      gap: 10px;
+    }
+  }
 }

@@ -51,3 +51,19 @@
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .JoinEventSection {
+    padding: 30px 40px;
+
+    .title {
+      font-size: $h3-desktop;
+    }
+
+    .imageSection {
+      width: 600px;
+      height: 350px;
+      position: relative;
+    }
+  }
+}
