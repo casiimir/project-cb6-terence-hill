@@ -1,6 +1,9 @@
 .main {
+  font-family: $font;
+
   .imageContainer {
     position: relative;
+    margin-top: 10vh;
 
     .image {
       max-height: 500px;
