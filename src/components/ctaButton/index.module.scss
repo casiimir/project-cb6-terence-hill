@@ -1,0 +1,21 @@
+.CtaButton {
+  font-weight: 700;
+  font-size: $body-mobile;
+  font-family: $font;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  background-color: $orange;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border: 1px solid $white;
+    border-radius: 100%;
+    background-color: $white;
+  }
+}

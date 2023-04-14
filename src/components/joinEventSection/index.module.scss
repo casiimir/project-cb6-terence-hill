@@ -1,0 +1,69 @@
+.JoinEventSection {
+  width: 100%;
+  background-color: $orange;
+  padding: 30px 20px;
+
+  .title {
+    font-size: 25px; //aumentato di 5px
+    margin-bottom: 5px;
+  }
+
+  .text {
+    font-size: $body-mobile;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .ctaLink {
+    text-decoration: underline;
+    margin-bottom: 8px;
+  }
+
+  .imageSection {
+    width: 350px;
+    height: 180px;
+    position: relative;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .countDown {
+      width: 150px;
+      background-color: $white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px 12px;
+
+      .countDown__text {
+        color: $mid-grey;
+        font-size: 12px;
+      }
+
+      .count {
+        color: $dark;
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .JoinEventSection {
+    padding: 30px 40px;
+
+    .title {
+      font-size: $h3-desktop;
+    }
+
+    .imageSection {
+      width: 600px;
+      height: 350px;
+      position: relative;
+    }
+  }
+}
