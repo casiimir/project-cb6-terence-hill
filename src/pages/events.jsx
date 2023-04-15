@@ -17,6 +17,7 @@ export default function Events() {
       <MainLayout>
         <div className={styles.Events}>
           <p>Scopri gli eventi</p>
+          {/* {console.log(items)} */}
           <CardList data={eventsList} />
         </div>
       </MainLayout>

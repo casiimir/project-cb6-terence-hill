@@ -1,11 +1,18 @@
 import styles from "./cardList.module.scss";
 import Card from "../card/Card";
 
-const CardList = ({ data }) => {
+import { useContext } from "react";
+import { DataContext } from "@/store/DataContext";
+
+const CardList = () => {
+  const items = useContext(DataContext);
+
   return (
     <div className={styles.CardList}>
-      {data.map((event) => (
-        <Card data={event} key={event.id} />
+      {console.log(items)}
+
+      {items._embedded?.events.map((event) => (
+        <Card data={event} />
       ))}
     </div>
   );
