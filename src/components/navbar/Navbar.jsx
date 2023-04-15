@@ -6,14 +6,16 @@ import { FiLogIn, FiSearch } from "react-icons/fi";
 const Navbar = () => {
   return (
     <div className={styles.Navbar}>
-      <Image
-        className={styles.logo}
-        src="/img/logo.png"
-        width={150}
-        height={150}
-        alt="hero image"
-        priority
-      />
+      <Link href="/">
+        <Image
+          className={styles.logo}
+          src="/img/logo.png"
+          width={150}
+          height={150}
+          alt="hero image"
+          priority
+        />
+      </Link>
       <ul className={styles.nav}>
         <li className={styles.navItem}>
           <Link href="/">Home</Link>
