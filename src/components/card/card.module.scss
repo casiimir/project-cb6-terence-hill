@@ -24,6 +24,11 @@
       width: 60%;
       z-index: 1;
       position: absolute;
+      cursor: pointer;
+
+      &:hover {
+        color: $aqua;
+      }
 
       @include tablet {
         font-size: $h4-desktop;
