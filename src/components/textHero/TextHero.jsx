@@ -26,6 +26,7 @@ const TextHero = () => {
         quaerat adipisci officia amet dolorum corporis explicabo officiis, culpa
         recusandae!
       </p>
+      <div className={styles.overlay}></div>
       <div className={styles.btn}>
         <CtaButton text={"COMPRA I BIGLIETTI"} />
       </div>
