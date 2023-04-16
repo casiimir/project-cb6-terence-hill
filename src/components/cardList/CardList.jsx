@@ -12,7 +12,7 @@ const CardList = () => {
       {console.log(items)}
 
       {items._embedded?.events.map((event) => (
-        <Card data={event} />
+        <Card data={event} key={event.id}/>
       ))}
     </div>
   );
