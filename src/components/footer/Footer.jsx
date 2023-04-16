@@ -1,11 +1,19 @@
 import styles from "./footer.module.scss";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className={styles.Footer}>
       <div className={styles.upper}>
-        <div>
-          <h3 className={styles.logo}>LOGO</h3>
+        <div className={styles.left__section}>
+          <Image
+            className={styles.logo}
+            src="/img/logo.png"
+            width={100}
+            height={100}
+            alt="logo"
+            priority
+          />
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
         </div>
         <ul className={styles.link}>

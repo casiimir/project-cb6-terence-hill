@@ -11,7 +11,13 @@ import JoinEventSection from "@/components/joinEventSection";
 import MeetArtistSection from "@/components/meetArtistSection";
 import BuyTicketSection from "@/components/buyTicketSection";
 
+// dati fetch
+import { useContext } from "react";
+import { DataContext } from "@/store/DataContext";
+
 export default function Home() {
+  const items = useContext(DataContext);
+
   return (
     <>
       <Head>
@@ -24,7 +30,7 @@ export default function Home() {
         <MainLayout>
           <TextHero />
           <HeroImage />
-          <JoinEventSection />
+          {/* <JoinEventSection item={items._embedded?.events[0]} /> */}
           <MeetArtistSection />
           <BuyTicketSection />
         </MainLayout>

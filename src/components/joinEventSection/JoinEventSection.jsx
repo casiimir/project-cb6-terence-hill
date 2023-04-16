@@ -1,10 +1,39 @@
+import { useState, useEffect } from "react";
+
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-const JoinEventSection = () => {
+const JoinEventSection = ({ item }) => {
+  const [timeRemaining, setTimeRemaining] = useState("");
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const eventDateTime = new Date(
+        `${item?.dates.start.localDate}T${item?.dates.start.localTime}`
+      );
+      const now = new Date();
+      const difference = eventDateTime - now;
+
+      if (difference <= 0) {
+        clearInterval(intervalId);
+        setTimeRemaining("Evento passato");
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        setTimeRemaining(`${days}:${hours}:${minutes}:${seconds}`);
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [item?.dates.start.localDate, item?.dates.start.localTime]);
+
   return (
     <div className={styles.JoinEventSection}>
+      {console.log(item)}
       <h3 className={styles.title}>Partecipa all{"'"}evento.</h3>
       <p className={styles.text}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
@@ -16,7 +45,7 @@ const JoinEventSection = () => {
       <div className={styles.imageSection}>
         <Image
           className={styles.image}
-          src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80"
+          src={item?.images[6].url}
           width={1000}
           height={300}
           alt="hero image"
@@ -24,7 +53,7 @@ const JoinEventSection = () => {
         />
         <div className={styles.countDown}>
           <p className={styles.countDown__text}>Mancano solo:</p>
-          <p className={styles.count}>12:03:40</p>
+          <p className={styles.count}>{timeRemaining}</p>
         </div>
       </div>
     </div>

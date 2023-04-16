@@ -8,16 +8,34 @@ const Navbar = () => {
   
   return (
     <div className={styles.Navbar}>
-      <h4>LOGO</h4>
+      <Link href="/">
+        <Image
+          className={styles.logo}
+          src="/img/logo.png"
+          width={150}
+          height={150}
+          alt="hero image"
+          priority
+        />
+      </Link>
       <ul className={styles.nav}>
-        <li className={styles.navItem}>Festival</li>
-        <li className={styles.navItem}>Musica</li>
-        <li className={styles.navItem}>Arte & Teatro</li>
-        <li className={styles.navItem}>Sport</li>
+        <li className={styles.navItem}>
+          <Link href="/">Home</Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link href="/events">Eventi</Link>
+        </li>
+        <li className={styles.navItem}>About</li>
+        {/* <li className={styles.navItem}>Contacts</li> */}
+        <li className={styles.navItem}>Newsletter</li>
       </ul>
       <div className={styles.search__section}>
-        <span className={styles.loginBtn}>login</span>
-        <span className={styles.searchBtn}>Search</span>
+        <span className={styles.searchBtn}>
+          <FiSearch />
+        </span>
+        <span className={styles.loginBtn}>
+          <FiLogIn />
+        </span>
       </div>
       <div className={styles.hamburgerMenu} onClick={() => setShowHamburger(!showHamburger)}>
         <div className={styles.line}></div>

@@ -3,6 +3,7 @@
 .Card {
   // border: 2px solid red;
   position: relative;
+  font-family: $font;
 
   .main {
     // border: 2px solid yellow;
@@ -11,16 +12,38 @@
     height: 130px;
     position: relative;
 
+    @include tablet {
+      height: 200px;
+    }
+
+    @include desktop {
+      height: 300px;
+    }
+
     .title {
       width: 60%;
       z-index: 1;
       position: absolute;
-      // border: 2px solid red;
+      cursor: pointer;
+
+      &:hover {
+        color: $aqua;
+      }
+
+      @include tablet {
+        font-size: $h4-desktop;
+      }
+
+      @include desktop {
+        font-size: $h3-desktop;
+        max-width: 70%;
+      }
     }
 
     .imageContainer {
       width: 60%;
       height: 100%;
+      border-radius: 8px;
       position: absolute;
       top: 0;
       right: 0;
@@ -28,6 +51,7 @@
       .image {
         width: 100%;
         height: 100%;
+        border-radius: 8px;
         object-fit: cover;
       }
 
@@ -47,6 +71,17 @@
     font-size: $didascalia-mobile;
     color: $orange;
     position: absolute;
-    bottom: -1px;
+    bottom: -10px;
+    padding-left: 0;
+
+    @include tablet {
+      font-size: $didascalia-desktop;
+      bottom: 0;
+    }
+
+    @include desktop {
+      font-size: $didascalia-desktop;
+      bottom: 40px;
+    }
   }
 }

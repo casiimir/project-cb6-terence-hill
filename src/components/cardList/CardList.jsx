@@ -4,7 +4,7 @@ import Card from "../card/Card";
 const CardList = ({ data }) => {
   return (
     <div className={styles.CardList}>
-      {data.map((event) => (
+      {data?._embedded?.events.map((event) => (
         <Card data={event} key={event.id} />
       ))}
     </div>

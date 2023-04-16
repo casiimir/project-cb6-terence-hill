@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { DataProvider } from "@/store/DataContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={inter.className}>
-      <Component {...pageProps} />
+    <main>
+      <DataProvider>
+        <Component {...pageProps} />
+      </DataProvider>
     </main>
   );
 }
