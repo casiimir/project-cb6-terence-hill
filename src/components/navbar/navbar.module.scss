@@ -19,6 +19,7 @@
     align-items: center;
     gap: 4px;
     cursor: pointer;
+    z-index: 9;
 
     .line {
       width: 100%;
@@ -30,6 +31,12 @@
   .nav,
   .search__section {
     display: none;
+  }
+
+  .menu{
+    position: absolute;
+    top: 20px;
+    left: 0px;
   }
 }
 
@@ -53,6 +60,10 @@
     .search__section {
       display: flex;
       gap: 10px;
+    }
+
+    .menu{
+      display: none;
     }
   }
 }
