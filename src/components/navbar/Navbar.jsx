@@ -1,9 +1,11 @@
+import { useState } from "react";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
-import Image from "next/image";
-import { FiLogIn, FiSearch } from "react-icons/fi";
+import HamburgerMenu from "../hamburgerMenu";
 
 const Navbar = () => {
+  const [showHamburger, setShowHamburger] = useState(false);
+  
   return (
     <div className={styles.Navbar}>
       <Link href="/">
@@ -35,11 +37,16 @@ const Navbar = () => {
           <FiLogIn />
         </span>
       </div>
-      <div className={styles.hamburgerMenu}>
+      <div className={styles.hamburgerMenu} onClick={() => setShowHamburger(!showHamburger)}>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
+      {showHamburger && (
+        <div className={styles.menu}>
+          <HamburgerMenu />
+        </div>
+      )}
     </div>
   );
 };
