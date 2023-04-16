@@ -1,0 +1,27 @@
+.HamburgerMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark;
+
+    .menuList{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .menuItem{
+            padding: 10px;
+            width: 95vw;
+            height: 90px;
+            font-size: $h1-mobile;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $orange;
+            cursor: pointer;
+        }
+    }
+}
