@@ -1,16 +1,21 @@
 .HamburgerMenu{
+    position: relative;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
     height: 100vh;
     width: 100vw;
     background-color: $dark;
+    z-index: 10;
+  
 
     .menuList{
         display: flex;
         flex-direction: column;
+        margin-top: 200px;
         gap: 10px;
+        height: 100vh;
 
         .menuItem{
             padding: 10px;
@@ -24,4 +29,20 @@
             cursor: pointer;
         }
     }
+    .homeMenuList{
+        font-family: $font;
+        display: flex;
+        justify-content: space-between;
+        
+
+        .homeMenuItem{
+            padding: 10px;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            font-size: $didascalia-mobile;
+            cursor: pointer;
+        }
+    }
+    
 }

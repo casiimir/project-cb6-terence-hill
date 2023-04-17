@@ -53,6 +53,7 @@ const Navbar = () => {
         <div className={styles.menu}>
           <HamburgerMenu />
         </div>
+      
       )}
     </div>
   );

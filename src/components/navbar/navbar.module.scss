@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
 
   .logo {
     cursor: pointer;
@@ -25,7 +25,8 @@
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    z-index: 9;
+    z-index: 10;
+
 
     .line {
       width: 100%;
@@ -40,9 +41,12 @@
   }
 
   .menu{
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 70px;
     left: 0px;
+    z-index: 10;
+
+
   }
 }
 
@@ -71,6 +75,7 @@
     .navItem:last-child {
       border-radius: 8px;
       background-color: rgba(6, 6, 6, 0.304);
+      // background-color: #de724e75;
       padding: 8px 12px;
     }
 
