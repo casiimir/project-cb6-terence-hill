@@ -13,14 +13,42 @@ export default function Category() {
 
   const [eventi, setEventi] = useState([]);
 
+  // useEffect(() => {
+  //   fetch(
+  //     `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=${category}`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setEventi(data);
+  //     });
+  // },
+
   useEffect(() => {
-    fetch(
-      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=${category}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEventi(data);
-      });
+    if (category === "sport") {
+      fetch(
+        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=sport`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setEventi(data);
+        });
+    } else if (category === "opera") {
+      fetch(
+        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=opera&locale=en-us`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setEventi(data);
+        });
+    } else if (category === "concert") {
+      fetch(
+        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&keyword=concerts&locale=it-it&size=40`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setEventi(data);
+        });
+    }
   }, [category]);
 
   return (
