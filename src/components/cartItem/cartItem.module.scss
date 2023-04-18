@@ -1,0 +1,16 @@
+.CartItem {
+  @include flexbox(row, space-between, center);
+  margin-bottom: 30px;
+
+  .artist {
+    @include flexbox(row, flex-start, center, 20px);
+
+    .image {
+      object-fit: cover;
+    }
+
+    .info {
+      max-width: 50%;
+    }
+  }
+}
