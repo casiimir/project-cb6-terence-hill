@@ -20,7 +20,8 @@ export default function EventDetails() {
   const router = useRouter();
   const { id } = router.query;
 
-  const event = items._embedded?.events.find((show) => show.id === id);
+  const event = items.find((show) => show.id === id);
+  console.log(items);
 
   function deleteSeconds(time) {
     let timeArray = time.split(":");
