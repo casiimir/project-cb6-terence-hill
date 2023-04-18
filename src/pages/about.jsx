@@ -5,7 +5,11 @@ import Head from "next/head";
 import Image from "next/image";
 import { AiFillGithub } from "react-icons/ai";
 import {AiFillLinkedin } from "react-icons/ai"
-import Scena from "@/scena/Scena";
+import Scena1 from "@/scene/MM/Scena1";
+import Scena2 from "@/scene/SR/Scena2";
+import Scena3 from "@/scene/FP/Scena3";
+import Scena4 from "@/scene/FF/Scena4";
+import Scena5 from "@/scene/GT/Scena5";
 
 
 export default function About () { 
@@ -22,12 +26,10 @@ export default function About () {
      <h1 className={styles.About}>About</h1>
       <div className={styles.aboutContainer}>
         <div className={styles.profile}>
-         <Image className={styles.profileImg}
-           src='' 
-           alt=""
-           width={350}
-           height={500}
-          />
+        <div className={styles.profileImg}>
+            <Scena1 />
+          </div>
+          
           <div className={styles.profileText}>
            <h1>Marilena Messina</h1>
            <p>
@@ -57,12 +59,9 @@ export default function About () {
        </div>
         </div>
         <div className={styles.profile}>
-         <Image className={styles.profileImg}
-           src=''  
-           alt=""
-           width={350}
-           height={500}
-          />
+        <div className={styles.profileImg}>
+            <Scena2 />
+          </div>
          <div className={styles.profileText}>
          <h1>Stefania Rapisarda</h1>
          <p>
@@ -98,7 +97,7 @@ export default function About () {
           //  width={350}
           //  height={500}
           >
-            <Scena />
+            <Scena3 />
           </div>
           
          <div className={styles.profileText}>
@@ -130,12 +129,9 @@ export default function About () {
       </div>
        </div>
        <div className={styles.profile}>
-         <Image className={styles.profileImg}
-           src=''  
-           alt=""
-           width={350}
-           height={500}
-          />
+       <div className={styles.profileImg}>
+            <Scena4 />
+          </div>
          <div className={styles.profileText}>
          <h1>Fabio Farinella</h1>
          <p>
@@ -165,12 +161,9 @@ export default function About () {
       </div>
        </div>
        <div className={styles.profile}>
-         <Image className={styles.profileImg}
-           src=''  
-           alt=""
-           width={350}
-           height={500}
-          />
+       <div className={styles.profileImg}>
+            <Scena5 />
+          </div>
          <div className={styles.profileText}>
          <h1>Greta Tomasoni</h1>
          <p>
@@ -202,6 +195,7 @@ export default function About () {
       </div>
     </div>
    </MainLayout>
+   
    </>
     
   );
