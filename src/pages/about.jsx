@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { AiFillGithub } from "react-icons/ai";
 import {AiFillLinkedin } from "react-icons/ai"
-
+import Scena from "@/scena/Scena";
 
 
 export default function About () { 
@@ -24,16 +24,15 @@ export default function About () {
         <div className={styles.profile}>
          <Image className={styles.profileImg}
            src='' 
-           className={styles.profileImg} 
            alt=""
            width={350}
            height={500}
           />
-         <div className={styles.profileText}>
-         <h1>Marilena Messina</h1>
-         <p>
-          Front-end developer
-         </p>
+          <div className={styles.profileText}>
+           <h1>Marilena Messina</h1>
+           <p>
+             Front-end developer
+           </p>
 
          <div className={styles.socialIcons}>
           <h3>
@@ -55,7 +54,7 @@ export default function About () {
            </Link>
          </h3>
         </div>
-      </div>
+       </div>
         </div>
         <div className={styles.profile}>
          <Image className={styles.profileImg}
@@ -93,12 +92,15 @@ export default function About () {
       </div>
        </div>
        <div className={styles.profile}>
-         <Image className={styles.profileImg}
-           src='' 
-           alt=""
-           width={350}
-           height={500}
-          />
+         <div className={styles.profileImg}
+          
+          //  alt=""
+          //  width={350}
+          //  height={500}
+          >
+            <Scena />
+          </div>
+          
          <div className={styles.profileText}>
          <h1>Flavia Pinello</h1>
          <p>
