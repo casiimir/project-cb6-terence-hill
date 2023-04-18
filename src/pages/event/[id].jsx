@@ -22,10 +22,8 @@ export default function EventDetails({ data }) {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // const query = router.query.id;
 
-
-  const event = items.find((show) => show.id === id);
-  console.log("--------->", event);
-
+  const event = items.find((show) => show.id === data.id);
+  // console.log("--------->", event);
 
   function deleteSeconds(time) {
     let timeArray = time.split(":");
@@ -55,12 +53,9 @@ export default function EventDetails({ data }) {
             <Image
               className={styles.image}
               src={
-           
-
                 event.images[5].width > 1500
                   ? event.images[5].url
                   : event.images[2].url
-
               }
               alt={data.name}
               width={1920}
