@@ -13,6 +13,7 @@ import CtaButton from "@/components/ctaButton";
 // dati fetch
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
+import Link from "next/link";
 
 export default function EventDetails() {
   // routing pagina dinamica
@@ -21,13 +22,21 @@ export default function EventDetails() {
   const { id } = router.query;
 
   const event = items.find((show) => show.id === id);
-  console.log(items);
+  console.log("--------->", event);
 
   function deleteSeconds(time) {
     let timeArray = time.split(":");
     let newTime = timeArray[0] + ":" + timeArray[1];
     return newTime;
   }
+
+  const onHandleClick = () => {
+    let localStorageItems = JSON.parse(localStorage.getItem("event")) || [];
+    localStorage.setItem(
+      "event",
+      JSON.stringify([...localStorageItems, event])
+    );
+  };
 
   return (
     <>
@@ -43,10 +52,7 @@ export default function EventDetails() {
             <Image
               className={styles.image}
               src={
-                event.images[5].width === 2426 ||
-                event.images[5].width === 2048 ||
-                event.images[5].width === 1024 ||
-                event.images[5].width === 1576
+                event.images[5].width > 1500
                   ? event.images[5].url
                   : event.images[2].url
               }
@@ -99,7 +105,9 @@ export default function EventDetails() {
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
               </p>
             </div>
-            <CtaButton text={"COMPRA IL BIGLIETTO"} />
+            <Link href="/cart" onClick={onHandleClick}>
+              <CtaButton text={"COMPRA IL BIGLIETTO"} />
+            </Link>
           </div>
         </MainLayout>
       </main>
