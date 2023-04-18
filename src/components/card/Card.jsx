@@ -14,7 +14,14 @@ const Card = ({ data }) => {
           <div className={styles.imageContainer}>
             <Image
               className={styles.image}
-              src={data.images[5].url}
+              src={
+                data.images[5].width === 2426 ||
+                data.images[5].width === 2048 ||
+                data.images[5].width === 1024 ||
+                data.images[5].width === 1576
+                  ? data.images[5].url
+                  : data.images[2].url
+              }
               alt={data.name}
               width={1920}
               height={550}

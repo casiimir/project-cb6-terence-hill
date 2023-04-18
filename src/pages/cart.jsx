@@ -20,11 +20,11 @@ export default function Cart() {
       <main>
         <MainLayout>
           <div className={styles.Cart}>
-            <h3 className={styles.title}>Carrello</h3>
+            <h3 className={styles.title}>Carrello:</h3>
             <CartList />
             <hr className={styles.line} />
             <div className={styles.checkout}>
-              <p>Totale: </p>
+              <p>Totale: 45€</p>
               <CtaButton text={"CHECKOUT"} />
             </div>
           </div>
