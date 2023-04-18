@@ -8,9 +8,9 @@ import { FiSearch, FiLogIn } from "react-icons/fi";
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
 
-const Navbar = () => {
+const Navbar = ({ showHamburger, setShowHamburger }) => {
   // const {state, dispatch } = useContext(DataContext);
-  const [showHamburger, setShowHamburger] = useState(false);
+  // const [showHamburger, setShowHamburger] = useState(false);
 
   const [searchOn, setSearchOn] = useState(false);
 
@@ -72,18 +72,14 @@ const Navbar = () => {
       </div>
       <div
         className={styles.hamburgerMenu}
-        onClick={() => setShowHamburger(!showHamburger)}
+        onClick={() => setShowHamburger((prev) => !prev)}
       >
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
 
-      {showHamburger && (  
-        <div className={styles.menu}>
-          <HamburgerMenu />  
-        </div>
-        )}
+      {showHamburger && <HamburgerMenu />}
     </div>
   );
 };
