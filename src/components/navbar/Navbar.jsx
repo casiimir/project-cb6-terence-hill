@@ -5,9 +5,7 @@ import Link from "next/link";
 import HamburgerMenu from "../hamburgerMenu";
 import { FiSearch, FiLogIn } from "react-icons/fi";
 
-const Navbar = () => {
-  const [showHamburger, setShowHamburger] = useState(false);
-
+const Navbar = ({ showHamburger, setShowHamburger }) => {
   return (
     <div className={styles.Navbar}>
       <Link href="/">
@@ -28,7 +26,7 @@ const Navbar = () => {
           <Link href="/events">Eventi</Link>
         </li>
         <li className={styles.navItem}>
-        <Link href="/about">About</Link>
+          <Link href="/about">About</Link>
         </li>
         {/* <li className={styles.navItem}>Contacts</li> */}
         <li className={styles.navItem}>Newsletter</li>
@@ -43,18 +41,14 @@ const Navbar = () => {
       </div>
       <div
         className={styles.hamburgerMenu}
-        onClick={() => setShowHamburger(!showHamburger)}
+        onClick={() => setShowHamburger((prev) => !prev)}
       >
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
 
-      {showHamburger && (  
-        <div className={styles.menu}>
-          <HamburgerMenu />  
-        </div>
-        )}
+      {showHamburger && <HamburgerMenu />}
     </div>
   );
 };

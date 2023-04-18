@@ -25,8 +25,6 @@
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    z-index: 10;
-
 
     .line {
       width: 100%;
@@ -40,14 +38,12 @@
     display: none;
   }
 
-  .menu{
+  .menu {
     position: fixed;
-    top: 70px;
+    top: 0px;
     left: 0px;
     z-index: 10;
   }
-
-
 }
 
 @media screen and (min-width: 768px) {
@@ -70,7 +66,7 @@
 
         &:hover {
           color: rgb(209, 209, 209);
-          box-shadow: 0px 1px 5px 0px rgba(222,114,78,1);
+          box-shadow: 0px 1px 5px 0px rgba(222, 114, 78, 1);
         }
       }
     }
@@ -94,7 +90,7 @@
       }
     }
 
-    .menu{
+    .menu {
       display: none;
     }
   }
