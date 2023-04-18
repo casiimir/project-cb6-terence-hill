@@ -8,7 +8,8 @@
     width: 100vw;
     background-color: $dark;
     z-index: 10;
-  
+
+
 
     .menuList{
         display: flex;
@@ -30,11 +31,12 @@
         }
     }
     .homeMenuList{
+        position: absolute;
         font-family: $font;
         display: flex;
         justify-content: space-between;
-        
-
+        bottom: 250px;
+       
         .homeMenuItem{
             padding: 10px;
             list-style-type: none;
@@ -42,6 +44,8 @@
             justify-content: space-around;
             font-size: $didascalia-mobile;
             cursor: pointer;
+            color: $white;
+            
         }
     }
     

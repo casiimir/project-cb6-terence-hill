@@ -14,7 +14,28 @@
     line-height: 1.4;
     margin-bottom: 30px;
   }
- 
+
+  .sportImage{
+    position: relative;
+    bottom: 70vh;
+    right: -50vw;
+    border-radius: 20px;
+    filter: sepia(0.4);
+    filter: brightness(1);
+    box-shadow: 10px 10px 13px -3px rgba(222,114,78,0.77);
+  }
+
+  .theatreImage{
+    position: relative;
+    bottom: 40vh;
+    right: -70vw;
+    filter: sepia(0.4);
+    filter: brightness(1.1);
+    border-radius: 20px;
+    box-shadow: 10px 10px 13px -3px rgba(222,114,78,0.77)
+  }   
+
+
   .image,
   .desktopTitle {
     display: none;
@@ -40,27 +61,6 @@
       filter: blur(2px);
       filter: saturate(1);
     }
-
-    .sportImage{
-      position: relative;
-      bottom: 70vh;
-      right: -50vw;
-      border-radius: 20px;
-      filter: sepia(0.4);
-      filter: brightness(1);
-      box-shadow: 10px 10px 13px -3px rgba(222,114,78,0.77);
-    }
-
-    .theatreImage{
-      position: relative;
-      bottom: 40vh;
-      right: -70vw;
-      filter: sepia(0.4);
-      filter: brightness(1.1);
-      border-radius: 20px;
-      box-shadow: 10px 10px 13px -3px rgba(222,114,78,0.77)
-    }    
- 
 
     .desktopTitle {
       display: block;
@@ -95,13 +95,13 @@
   }
 
   .title,
-  .text {
+  .text{
     display: none;
   }
+
 
   .btn {
     display: none;
   }
-
   
 }
