@@ -1,17 +1,14 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
-// import styles from "@/styles/pages/Events.module.scss";
 
 import CardList from "@/components/cardList";
 
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function Category() {
+export default function Category({ data }) {
   const router = useRouter();
   const { category } = router.query;
-
-  const [eventi, setEventi] = useState([]);
 
   // useEffect(() => {
   //   fetch(
@@ -23,33 +20,33 @@ export default function Category() {
   //     });
   // },
 
-  useEffect(() => {
-    if (category === "sport") {
-      fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=sport`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setEventi(data);
-        });
-    } else if (category === "opera") {
-      fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=opera&locale=en-us`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setEventi(data);
-        });
-    } else if (category === "concert") {
-      fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&keyword=concerts&locale=it-it&size=40`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setEventi(data);
-        });
-    }
-  }, [category]);
+  // useEffect(() => {
+  //   if (category === "sport") {
+  //     fetch(
+  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=sport`
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setEventi(data);
+  //       });
+  //   } else if (category === "opera") {
+  //     fetch(
+  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=opera&locale=en-us`
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setEventi(data);
+  //       });
+  //   } else if (category === "concert") {
+  //     fetch(
+  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&keyword=concerts&locale=it-it&size=40`
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setEventi(data);
+  //       });
+  //   }
+  // }, [category]);
 
   return (
     <>
@@ -62,9 +59,53 @@ export default function Category() {
       <MainLayout>
         <div>
           <p>{category}</p>
-          <CardList data={eventi} />
+          <CardList data={data} />
         </div>
       </MainLayout>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { category } = context.query;
+  console.log(context);
+
+  if (category === "sport") {
+    const data = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=sport` // come faccio a prendere id da data, array?
+    );
+    const res = await data.json();
+    console.log(data);
+    return {
+      props: {
+        data: res._embedded.events,
+      },
+    };
+  }
+
+  if (category === "opera") {
+    const data = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=opera&locale=en-us` // come faccio a prendere id da data, array?
+    );
+    const res = await data.json();
+    console.log(data);
+    return {
+      props: {
+        data: res._embedded.events,
+      },
+    };
+  }
+
+  if (category === "concert") {
+    const data = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&keyword=concerts&locale=it-it&size=40` // come faccio a prendere id da data, array?
+    );
+    const res = await data.json();
+    console.log(data);
+    return {
+      props: {
+        data: res._embedded.events,
+      },
+    };
+  }
 }

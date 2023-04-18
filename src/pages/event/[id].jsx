@@ -15,14 +15,17 @@ import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
 import Link from "next/link";
 
-export default function EventDetails() {
+export default function EventDetails({ data }) {
   // routing pagina dinamica
   const items = useContext(DataContext);
   const router = useRouter();
-  const { id } = router.query;
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // const query = router.query.id;
+
 
   const event = items.find((show) => show.id === id);
   console.log("--------->", event);
+
 
   function deleteSeconds(time) {
     let timeArray = time.split(":");
@@ -52,18 +55,21 @@ export default function EventDetails() {
             <Image
               className={styles.image}
               src={
+           
+
                 event.images[5].width > 1500
                   ? event.images[5].url
                   : event.images[2].url
+
               }
-              alt={event.name}
+              alt={data.name}
               width={1920}
               height={550}
               layout="responsive"
             />
             <div className={styles.cover}>
               <div className={styles.overlay}></div>
-              <h2 className={styles.title}>{event.name}</h2>
+              <h2 className={styles.title}>{data.name}</h2>
             </div>
           </div>
           {console.log(items)}
@@ -72,18 +78,18 @@ export default function EventDetails() {
               <li>
                 <FiCalendar />
                 <p>
-                  {event.dates.start.localDate.split("-").reverse().join("-")}
+                  {data.dates.start.localDate.split("-").reverse().join("-")}
                 </p>
               </li>
               <li>
                 <FiClock />
-                <p>{deleteSeconds(event.dates.start.localTime)}</p>
+                <p>{deleteSeconds(data.dates.start.localTime)}</p>
               </li>
               <li>
                 <FiMapPin />
                 <p>
-                  {event._embedded.venues[0].name} -{" "}
-                  {event._embedded.venues[0].city.name}
+                  {data._embedded.venues[0].name} -{" "}
+                  {data._embedded.venues[0].city.name}
                 </p>
               </li>
             </ul>
@@ -91,15 +97,15 @@ export default function EventDetails() {
               <h3>Descrizione</h3>
               <p>
                 {`Non perdere l'opportunità di assistere all'evento ${
-                  event.name
+                  data.name
                 },
-                in programma il ${event.dates.start.localDate
+                in programma il ${data.dates.start.localDate
                   .split("-")
                   .reverse()
                   .join("-")} presso ${
-                  event._embedded.venues[0].name
+                  data._embedded.venues[0].name
                 } alle ${deleteSeconds(
-                  event.dates.start.localTime
+                  data.dates.start.localTime
                 )}. Preparati a vivere un'esperienza
                 unica nel suo genere, con un artista di fama internazionale.
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
@@ -113,4 +119,19 @@ export default function EventDetails() {
       </main>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  console.log(context);
+  const data = await fetch(
+    `https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&locale=it-it&size=20` // come faccio a prendere id da data, array?
+  );
+  const res = await data.json();
+  console.log(data);
+  return {
+    props: {
+      data: res,
+    },
+  };
 }

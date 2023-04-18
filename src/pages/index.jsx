@@ -30,7 +30,7 @@ export default function Home() {
         <MainLayout>
           <TextHero />
           <HeroImage />
-          <JoinEventSection item={items._embedded?.events[9]} />
+          <JoinEventSection item={items[9]} />
           <MeetArtistSection />
           <BuyTicketSection />
         </MainLayout>
