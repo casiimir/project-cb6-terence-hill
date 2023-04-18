@@ -1,0 +1,108 @@
+.CartItem {
+  @include flexbox(row, space-between, center);
+  margin-bottom: 30px;
+
+  .artist {
+    @include flexbox(row, flex-start, center, 20px);
+    max-width: 50%;
+
+    .image {
+      object-fit: cover;
+    }
+
+    .info {
+      @include flexbox(column, center, flex-start, 5px);
+      font-weight: 200;
+    }
+  }
+
+  .priceInfo {
+    width: 400px;
+    @include flexbox(column, center, flex-end, 20px);
+
+    .quantityInfo {
+      @include flexbox(row, flex-end, center, 10px);
+
+      .quantityContainer {
+        @include flexbox(row, center, center);
+        .minus,
+        .plus {
+          width: 30px;
+          cursor: pointer;
+        }
+
+        .quantity {
+          box-sizing: content-box;
+          width: 30px;
+          height: 30px;
+          background-color: transparent;
+          border: 0.5px solid $white;
+          color: $white;
+          padding: 0 0 0 22px;
+        }
+      }
+
+      .button {
+        background-color: transparent;
+        border: none;
+        color: $white;
+        text-decoration: underline;
+        font-weight: 200;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .CartItem {
+    @include flexbox(column, flex-start, flex-start, 30px);
+    max-width: 100%;
+    margin-bottom: 70px;
+
+    .artist {
+      max-width: 100%;
+
+      .info {
+        max-width: 100%;
+      }
+    }
+
+    .priceInfo {
+      width: 100%;
+      @include flexbox(row, space-between, center);
+
+      .quantityInfo {
+        @include flexbox(row, flex-end, center, 10px);
+
+        .quantityContainer {
+          @include flexbox(row, center, center);
+          .minus,
+          .plus {
+            width: 30px;
+            cursor: pointer;
+          }
+
+          .quantity {
+            box-sizing: content-box;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: 0.5px solid $white;
+            color: $white;
+            padding: 0 0 0 22px;
+          }
+        }
+
+        .button {
+          background-color: transparent;
+          border: none;
+          color: $white;
+          text-decoration: underline;
+          font-weight: 200;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

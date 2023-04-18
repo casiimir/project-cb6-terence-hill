@@ -49,11 +49,12 @@ const Navbar = () => {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
-      {showHamburger && (
+
+      {showHamburger && (  
         <div className={styles.menu}>
-          <HamburgerMenu />
+          <HamburgerMenu />  
         </div>
-      )}
+        )}
     </div>
   );
 };

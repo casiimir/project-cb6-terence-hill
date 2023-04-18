@@ -13,9 +13,32 @@ const TextHero = () => {
         alt="hero image"
         priority
       />
+      
+      <Image
+      className={styles.theatreImage}
+      src="https://images.unsplash.com/photo-1571299803548-831c31e293e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
+      width={230}
+      height={190}
+      alt = "theatre image" 
+      />
+      
+      <Image
+      className={styles.sportImage}
+      src="https://images.unsplash.com/photo-1528291954423-c0c71c12baeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1626&q=80"
+      width={150}
+      height={150}
+      alt = "sport image" 
+      />      
+      
+
+      <div className={styles.textSection}>
       <h1 className={styles.desktopTitle}>
         Una miriade di <br /> eventi imperdibili
       </h1>
+      <p className={styles.desktopText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br/>Odio dolores perspiciatis, pariatur blanditiis, quis fugiat similique provident <br/> nesciunt corrupti, deleniti quibusdam saepe assumenda iure incidunt fugit minima? <br /> Praesentium, explicabo quas.</p>
+      </div>
+
+    
 
       {/* mobile  */}
       <h1 className={styles.title}>
