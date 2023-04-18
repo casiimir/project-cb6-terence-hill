@@ -41,7 +41,14 @@ export default function EventDetails() {
           <div className={styles.imageContainer}>
             <Image
               className={styles.image}
-              src={event.images[5].url}
+              src={
+                event.images[5].width === 2426 ||
+                event.images[5].width === 2048 ||
+                event.images[5].width === 1024 ||
+                event.images[5].width === 1576
+                  ? event.images[5].url
+                  : event.images[2].url
+              }
               alt={event.name}
               width={1920}
               height={550}

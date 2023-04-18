@@ -1,10 +1,24 @@
+import { useState } from "react";
 import Link from "next/link";
-import styles from "./cartItem.module.scss";
-
 import Image from "next/image";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import styles from "./cartItem.module.scss";
 
 const CartItem = ({ data }) => {
+  const [valueQty, setValueQty] = useState(1);
+
+  const plusQty = () => {
+    const newQty = valueQty + 1;
+    setValueQty(newQty);
+  };
+
+  const lessQty = () => {
+    const newQty = valueQty - 1;
+    setValueQty(newQty);
+  };
+
+  const removeSingleItem = () => {};
+
   return (
     <div className={styles.CartItem}>
       <div className={styles.artist}>
@@ -17,7 +31,8 @@ const CartItem = ({ data }) => {
         />
         <div className={styles.info}>
           <h3>{data.name}</h3>
-          <p>{data.dates.start.localDate}</p>
+
+          <p>{data.dates.start.localDate.split("-").reverse().join("-")}</p>
           {data._embedded.venues[0].name ? (
             <p>
               {data._embedded.venues[0].name} -{" "}
@@ -28,19 +43,20 @@ const CartItem = ({ data }) => {
           )}
         </div>
       </div>
-      <div>
-        <div>
-          <div>
-            <FiMinus />
+      <div className={styles.priceInfo}>
+        <div className={styles.quantityInfo}>
+          <div className={styles.quantityContainer}>
+            <FiMinus onClick={lessQty} className={styles.minus} />
+            <input type="text" value={valueQty} className={styles.quantity} />
+            <FiPlus onClick={plusQty} className={styles.plus} />
           </div>
-          <input type="text" />
           <div>
-            <FiPlus />
+            <button onClick={removeSingleItem} className={styles.button}>
+              Rimuovi
+            </button>
           </div>
         </div>
-        <div>
-          <button>Remove</button>
-        </div>
+        <p>15€</p>
       </div>
     </div>
   );
