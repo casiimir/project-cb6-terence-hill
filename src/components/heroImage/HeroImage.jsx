@@ -2,17 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useState } from "react";
-
 const HeroImage = () => {
-  const [selectedCategoria, setSelectedCategoria] = useState(null);
-  const [eventi, setEventi] = useState([]);
-
-  const handleCategoriaClick = (categoria) => {
-    setSelectedCategoria(categoria);
-    console.log(categoria);
-  };
-
   return (
     <div className={styles.HeroImage}>
       <div className={styles.music__card}>
@@ -55,7 +45,7 @@ const HeroImage = () => {
       <div className={styles.festival__card}>
         <Link href={"/events/sport"}>
           <Image
-            onClick={() => handleCategoriaClick("sport")}
+            // onClick={() => handleCategoriaClick("sport")}
             className={styles.img}
             src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
             width={1000}

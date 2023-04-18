@@ -33,7 +33,7 @@ const JoinEventSection = ({ item }) => {
 
   return (
     <div className={styles.JoinEventSection}>
-      {console.log(item)}
+      {/* {console.log(item)} */}
       <h3 className={styles.title}>Partecipa all{"'"}evento.</h3>
       <p className={styles.text}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
