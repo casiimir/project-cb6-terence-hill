@@ -13,6 +13,7 @@ import CtaButton from "@/components/ctaButton";
 // dati fetch
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
+import Link from "next/link";
 
 export default function EventDetails({ data }) {
   // routing pagina dinamica
@@ -21,14 +22,24 @@ export default function EventDetails({ data }) {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // const query = router.query.id;
 
-  // const event = items.find((show) => show.id === query);
-  // console.log(items);
+
+  const event = items.find((show) => show.id === id);
+  console.log("--------->", event);
+
 
   function deleteSeconds(time) {
     let timeArray = time.split(":");
     let newTime = timeArray[0] + ":" + timeArray[1];
     return newTime;
   }
+
+  const onHandleClick = () => {
+    let localStorageItems = JSON.parse(localStorage.getItem("event")) || [];
+    localStorage.setItem(
+      "event",
+      JSON.stringify([...localStorageItems, event])
+    );
+  };
 
   return (
     <>
@@ -44,12 +55,12 @@ export default function EventDetails({ data }) {
             <Image
               className={styles.image}
               src={
-                data.images[5].width === 2426 ||
-                data.images[5].width === 2048 ||
-                data.images[5].width === 1024 ||
-                data.images[5].width === 1576
-                  ? data.images[5].url
-                  : data.images[2].url
+           
+
+                event.images[5].width > 1500
+                  ? event.images[5].url
+                  : event.images[2].url
+
               }
               alt={data.name}
               width={1920}
@@ -100,7 +111,9 @@ export default function EventDetails({ data }) {
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
               </p>
             </div>
-            <CtaButton text={"COMPRA IL BIGLIETTO"} />
+            <Link href="/cart" onClick={onHandleClick}>
+              <CtaButton text={"COMPRA IL BIGLIETTO"} />
+            </Link>
           </div>
         </MainLayout>
       </main>

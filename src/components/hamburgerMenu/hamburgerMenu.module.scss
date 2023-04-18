@@ -1,52 +1,62 @@
-.HamburgerMenu{
-    position: relative;
+.HamburgerMenu {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  background-color: $dark;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  .menuList {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: $dark;
-    z-index: 10;
+    margin-top: 160px;
+    gap: 10px;
 
-
-
-    .menuList{
-        display: flex;
-        flex-direction: column;
-        margin-top: 200px;
-        gap: 10px;
-        height: 100vh;
-
-        .menuItem{
-            padding: 10px;
-            width: 95vw;
-            height: 90px;
-            font-size: $h1-mobile;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $orange;
-            cursor: pointer;
-        }
+    .menuItem {
+      padding: 10px;
+      width: 90vw;
+      height: 90px;
+      font-size: $h1-mobile;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $orange;
+      cursor: pointer;
     }
-    .homeMenuList{
-        position: absolute;
-        font-family: $font;
-        display: flex;
-        justify-content: space-between;
-        bottom: 250px;
-       
-        .homeMenuItem{
-            padding: 10px;
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            font-size: $didascalia-mobile;
-            cursor: pointer;
-            color: $white;
-            
-        }
+  }
+  .homeMenuList {
+    position: absolute;
+    font-family: $font;
+    display: flex;
+    justify-content: space-between;
+    top: 100px;
+
+    @include tablet {
+      bottom: 100px;
     }
-    
+
+    .homeMenuItem {
+      font-size: $body-mobile;
+      padding: 10px;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      cursor: pointer;
+      color: $white;
+    }
+  }
 }
