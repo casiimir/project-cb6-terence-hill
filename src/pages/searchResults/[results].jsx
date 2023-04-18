@@ -1,16 +1,12 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
-import styles from "@/styles/pages/Events.module.scss";
-// import eventsList from "@/mock/events";
 
 import CardList from "@/components/cardList";
 
-import { useContext } from "react";
-import { DataContext } from "@/store/DataContext";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
-export default function Events() {
-  const items = useContext(DataContext);
-
+export default function searchResults() {
   return (
     <>
       <Head>
@@ -20,10 +16,9 @@ export default function Events() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <div className={styles.Events}>
-          <p>Scopri gli eventi</p>
-          {console.log(items)}
-          <CardList data={items} />
+        <div>
+          <p>{category}</p>
+          <CardList data={eventi} />
         </div>
       </MainLayout>
     </>
