@@ -1,0 +1,15 @@
+.Cart {
+  @include flexbox(column, flex-start, flex-start, 30px);
+  font-family: $font;
+  margin: 15vh 0px;
+  padding: 0px 30px;
+
+  .line {
+    width: 100%;
+  }
+
+  .checkout {
+    width: 100%;
+    @include flexbox(row, flex-end, center, 50px);
+  }
+}
