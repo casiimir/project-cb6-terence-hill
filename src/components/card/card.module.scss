@@ -4,6 +4,7 @@
   // border: 2px solid red;
   position: relative;
   font-family: $font;
+  
 
   .main {
     // border: 2px solid yellow;
@@ -19,11 +20,13 @@
     @include desktop {
       height: 300px;
     }
+    
 
     .title {
-      width: 60%;
+      width: 80%;
       z-index: 1;
       position: absolute;
+      padding-left: 10px;
       cursor: pointer;
 
       &:hover {
@@ -53,6 +56,11 @@
         height: 100%;
         border-radius: 8px;
         object-fit: cover;
+        box-shadow: 5px 5px 12px -3px rgba(222,114,78,0.77);
+      }
+      &:hover{
+        transform: scale(1.1);
+        transition: all 0.3s;
       }
 
       .overlay {
@@ -64,6 +72,7 @@
         height: 100%;
         opacity: 0.4;
       }
+
     }
   }
 
@@ -72,7 +81,7 @@
     color: $orange;
     position: absolute;
     bottom: -10px;
-    padding-left: 0;
+    padding-left: 15px;
 
     @include tablet {
       font-size: $didascalia-desktop;
@@ -84,4 +93,5 @@
       bottom: 40px;
     }
   }
+
 }

@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
 
   .logo {
     cursor: pointer;
@@ -25,7 +25,8 @@
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    z-index: 9;
+    z-index: 10;
+
 
     .line {
       width: 100%;
@@ -39,11 +40,16 @@
     display: none;
   }
 
-  .menu {
-    position: absolute;
-    top: 20px;
+
+
+  .menu{
+    position: fixed;
+    top: 70px;
     left: 0px;
+    z-index: 10;
   }
+
+
 }
 
 @media screen and (min-width: 768px) {
@@ -61,9 +67,12 @@
         list-style: none;
         font-size: $didascalia-desktop;
         cursor: pointer;
+        border-radius: 8px;
+        padding: 8px 12px;
 
         &:hover {
           color: rgb(209, 209, 209);
+          box-shadow: 0px 1px 5px 0px rgba(222,114,78,1);
         }
       }
     }
@@ -71,6 +80,7 @@
     .navItem:last-child {
       border-radius: 8px;
       background-color: rgba(6, 6, 6, 0.304);
+      // background-color: #de724e75;
       padding: 8px 12px;
     }
 
