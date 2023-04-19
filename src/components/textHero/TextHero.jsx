@@ -28,7 +28,31 @@ const TextHero = () => {
       width={150}
       height={150}
       alt = "sport image" 
-      />      
+      />     
+
+            <Image
+      className={styles.concertImage}
+      src="https://images.unsplash.com/photo-1619229665876-f54b2276b7bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      width={150}
+      height={150}
+      alt = "sport image" 
+      /> 
+
+      <Image
+      className={styles.orchestraImage}
+      src="https://images.unsplash.com/photo-1551696785-927d4ac2d35b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      width={150}
+      height={150}
+      alt = "sport image" 
+      /> 
+
+      <Image
+      className={styles.liveImage}
+      src="https://images.unsplash.com/photo-1497911270199-1c552ee64aa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      width={230}
+      height={190}
+      alt = "sport image" 
+      />   
       
 
       <div className={styles.textSection}>
