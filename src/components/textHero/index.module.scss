@@ -15,29 +15,17 @@
     margin-bottom: 30px;
   }
 
-  .sportImage {
-    position: relative;
-    bottom: 70vh;
-    right: -50vw;
-    border-radius: 20px;
-    filter: sepia(0.4);
-    filter: brightness(1);
-    box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
-  }
-
-  .theatreImage {
-    position: relative;
-    bottom: 40vh;
-    right: -70vw;
-    filter: sepia(0.4);
-    filter: brightness(1.1);
-    border-radius: 20px;
-    box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
-  }
-
   .image,
   .desktopTitle,
   .desktopText {
+    display: none;
+  }
+
+  .sportImage,
+  .theatreImage,
+  .concertImage,
+  .orchestraImage,
+  .liveImage{
     display: none;
   }
 }
@@ -91,6 +79,60 @@
       bottom: -70px;
       left: 0;
       right: 0;
+    }
+
+    .sportImage {
+      display: block;
+      position: absolute;
+      top: 90px;
+      right: 350px;
+      border-radius: 20px;
+      filter: sepia(0.4);
+      filter: brightness(1);
+      box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
+    }
+  
+    .theatreImage {
+      display: block;
+      position: absolute;
+      filter: sepia(0.3);
+      bottom: 90px;
+      right: 450px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
+    }
+  
+    .concertImage{
+      display: block;
+      position: absolute;
+      filter: sepia(0.4);
+      filter: brightness(1.1);
+      top: 350px;
+      right: 25px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
+    }
+  
+    .orchestraImage{
+      display: block;
+      position: absolute;
+      object-fit: cover;
+      filter: sepia(0.4);
+      filter: brightness(1);
+      bottom: 30px;
+      right: 270px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
+    }
+  
+    .liveImage{
+      display: block;
+      position: absolute;
+      top: 120px;
+      right: 80px;
+      filter: sepia(0.1);
+      border-radius: 20px;
+      box-shadow: 10px 10px 13px -3px rgba(222, 114, 78, 0.77);
     }
   }
 

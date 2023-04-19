@@ -28,7 +28,7 @@
       cursor: pointer;
 
       &:hover {
-        color: $aqua;
+        color: $orange;
       }
 
       @include tablet {
@@ -75,7 +75,7 @@
 
   .date {
     font-size: $didascalia-mobile;
-    color: $orange;
+    color: $mid-grey;
     position: absolute;
     bottom: -10px;
     padding-left: 15px;
