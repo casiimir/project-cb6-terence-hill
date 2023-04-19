@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import SecondaryButton from "../SecondaryButton";
 
 const JoinEventSection = ({ item }) => {
   const [timeRemaining, setTimeRemaining] = useState("");
+  const [daysRemaining, setDaysRemaining] = useState("");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -24,7 +26,8 @@ const JoinEventSection = ({ item }) => {
         const minutes = Math.floor((difference / 1000 / 60) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
 
-        setTimeRemaining(`${days}:${hours}:${minutes}:${seconds}`);
+        setDaysRemaining(days);
+        setTimeRemaining(`${hours}:${minutes}:${seconds}`);
       }
     }, 1000);
 
@@ -33,27 +36,39 @@ const JoinEventSection = ({ item }) => {
 
   return (
     <div className={styles.JoinEventSection}>
-      {/* {console.log(item)} */}
-      <h3 className={styles.title}>Partecipa all{"'"}evento.</h3>
-      <p className={styles.text}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
-        vitae.
-      </p>
-      <Link href="#">
-        <p className={styles.ctaLink}>Scopri di più</p>
-      </Link>
+      <div className={styles.info}>
+        <h3 className={styles.title}>
+          Spettacoli dal vivo, <br /> di qualità.
+        </h3>
+        <p className={styles.text}>
+          {
+            "Guarda cosa c'è in programma nella tua città. Non perdere l'opportunità di vivere esperienze indimenticabili e di immergerti in contesti culturali, artistici, sportivi e ricreativi di grande impatto!"
+          }
+        </p>
+        <Link href="/events">
+          <SecondaryButton text={"VEDI EVENTI"} />
+        </Link>
+      </div>
+
       <div className={styles.imageSection}>
         <Image
           className={styles.image}
-          src={item?.images[6].url}
+          src={item?.images[5].url}
           width={1000}
-          height={300}
+          height={1000}
           alt="hero image"
           priority
         />
         <div className={styles.countDown}>
           <p className={styles.countDown__text}>Mancano solo:</p>
-          <p className={styles.count}>{timeRemaining}</p>
+          {daysRemaining !== 0 && (
+            <span className={styles.count}>
+              {daysRemaining}
+              <span className={styles.countDown__text}>giorni</span>
+            </span>
+          )}
+
+          <span className={styles.count}>{timeRemaining}</span>
         </div>
       </div>
     </div>

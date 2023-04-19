@@ -1,0 +1,70 @@
+.AboutUs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  background-color: $white;
+  color: $dark;
+
+  @include mobile {
+    @include flexbox(column, center, flex-start, 30px);
+  }
+
+  .image {
+    width: 50vw;
+    height: 80vh;
+    position: relative;
+
+    @include mobile {
+      width: 100vw;
+      height: 50vh;
+    }
+  }
+
+  .textContent {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include mobile {
+      width: 100%;
+      padding: 40px 40px 80px 40px;
+    }
+
+    .title {
+      font-size: $h3-desktop;
+    }
+
+    .text {
+      width: 60%;
+      margin: -5px 0 10px 0;
+      font-weight: 300;
+      font-size: $h3-mobile;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MeetArtistSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+
+    .image {
+      width: 350px;
+      height: 450px;
+    }
+
+    .textContent {
+      .title {
+        font-size: $h3-desktop;
+      }
+    }
+  }
+}

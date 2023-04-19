@@ -31,7 +31,7 @@
       left: 0;
       font-size: $h2-mobile;
       color: $orange;
-      padding: 0 20px;
+      padding: 0 40px;
 
       @include tablet {
         font-size: $h3-desktop;
@@ -44,7 +44,7 @@
   }
 
   .info {
-    padding: 0 20px;
+    padding: 0 40px;
     @include flexbox(column, flex-start, flex-start, 30px);
 
     ul {
@@ -56,6 +56,10 @@
         @include flexbox(row, flex-start, flex-start, 10px);
         font-size: $body-mobile;
         font-weight: 300;
+
+        @include desktop {
+          font-size: $body-desktop;
+        }
       }
     }
 
@@ -71,7 +75,8 @@
         max-width: 500px;
 
         @include desktop {
-          max-width: 70%;
+          font-size: $body-desktop;
+          max-width: 68%;
         }
       }
     }

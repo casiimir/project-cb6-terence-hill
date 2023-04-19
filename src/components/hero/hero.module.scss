@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.Hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: $dark;
+}
+
+.title {
+  width: 100%;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 100px;
+  letter-spacing: 0.15rem;
+
+  @include tablet {
+    font-size: 80px;
+  }
+
+  @include mobile {
+    font-size: 50px;
+  }
+}

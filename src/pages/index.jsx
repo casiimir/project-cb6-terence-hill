@@ -5,10 +5,11 @@ import styles from "@/styles/pages/Home.module.scss";
 import MainLayout from "@/layouts/mainLayout";
 
 // home page components
+import Hero from "@/components/hero";
 import TextHero from "@/components/textHero";
 import HeroImage from "@/components/heroImage";
 import JoinEventSection from "@/components/joinEventSection";
-import MeetArtistSection from "@/components/meetArtistSection";
+import AboutUs from "@/components/aboutUs";
 import BuyTicketSection from "@/components/buyTicketSection";
 
 // dati fetch
@@ -28,11 +29,12 @@ export default function Home() {
       </Head>
       <main className={styles.HomePage}>
         <MainLayout>
-          <TextHero />
+          {/* <TextHero /> */}
+          <Hero />
+          <JoinEventSection item={items[0]} />
+          <AboutUs />
           <HeroImage />
-          <JoinEventSection item={items[9]} />
-          <MeetArtistSection />
-          <BuyTicketSection />
+          {/* <BuyTicketSection /> */}
         </MainLayout>
       </main>
     </>

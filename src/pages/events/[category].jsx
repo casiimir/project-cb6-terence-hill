@@ -1,52 +1,14 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
+import styles from "./category.module.scss";
 
 import CardList from "@/components/cardList";
 
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export default function Category({ data }) {
   const router = useRouter();
   const { category } = router.query;
-
-  // useEffect(() => {
-  //   fetch(
-  //     `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=${category}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setEventi(data);
-  //     });
-  // },
-
-  // useEffect(() => {
-  //   if (category === "sport") {
-  //     fetch(
-  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=sport`
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setEventi(data);
-  //       });
-  //   } else if (category === "opera") {
-  //     fetch(
-  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&classificationName=opera&locale=en-us`
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setEventi(data);
-  //       });
-  //   } else if (category === "concert") {
-  //     fetch(
-  //       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&keyword=concerts&locale=it-it&size=40`
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setEventi(data);
-  //       });
-  //   }
-  // }, [category]);
 
   return (
     <>
@@ -58,6 +20,9 @@ export default function Category({ data }) {
       </Head>
       <MainLayout>
         <div>
+          {category === "concert" && <p className={styles.text}>Concerti</p>}
+          {category === "opera" && <p className={styles.text}>Opera</p>}
+          {category === "sport" && <p className={styles.text}>Sport</p>}
           <CardList data={data} category={category} />
         </div>
       </MainLayout>

@@ -49,6 +49,7 @@
 
 @media screen and (min-width: 768px) {
   .Navbar {
+    padding: 0 40px;
     .hamburgerMenu {
       display: none;
     }
@@ -56,27 +57,24 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 40px;
 
       .navItem {
         list-style: none;
         font-size: $didascalia-desktop;
         cursor: pointer;
-        border-radius: 8px;
-        padding: 8px 12px;
 
         &:hover {
-          color: rgb(209, 209, 209);
-          box-shadow: 0px 1px 5px 0px rgba(222, 114, 78, 1);
+          text-decoration: underline;
         }
       }
     }
 
-    .navItem:last-child {
-      border-radius: 8px;
-      background-color: rgba(6, 6, 6, 0.304);
-      // background-color: #de724e75;
-      padding: 8px 12px;
+    .logo {
+      position: absolute;
+      cursor: pointer;
+      top: -38px;
+      left: calc(50% - 75px);
     }
 
     .search__section {
@@ -96,6 +94,9 @@
           animation-iteration-count: 1;
           transition: 1s;
           outline: none;
+          border-radius: 25px;
+          border: none;
+          padding: 7px 45px 7px 10px;
         }
       }
 
@@ -110,9 +111,13 @@
         }
       }
 
-      .loginBtn,
       .searchBtn {
         font-size: 25px;
+        cursor: pointer;
+      }
+
+      .cartBtn {
+        font-size: 23px;
         cursor: pointer;
       }
     }

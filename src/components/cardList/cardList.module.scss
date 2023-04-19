@@ -3,11 +3,24 @@
   flex-direction: column;
   font-family: $font;
   gap: 30px;
-  padding: 0 20px;
-  margin: 100px 0;
+  padding: 0 40px;
 
-  .category {
-    font-size: $h3-mobile;
+  @include mobile {
+    padding: 0 20px;
+  }
+
+  p {
     color: $orange;
+    font-size: $body-mobile;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    @include tablet {
+      font-size: $body-desktop;
+    }
+
+    @include desktop {
+      font-size: $h4-desktop;
+    }
   }
 }

@@ -1,28 +1,47 @@
 .JoinEventSection {
   width: 100%;
-  background-color: $orange;
-  padding: 30px 20px;
+  background-color: $dark;
+  padding: 80px 120px;
+  @include flexbox(row, space-between, center);
+
+  @include tablet {
+    padding: 80px 80px;
+  }
+
+  @include mobile {
+    padding: 80px 40px;
+    @include flexbox(column, center, flex-start, 30px);
+  }
+
+  .info {
+    @include flexbox(column, center, flex-start, 15px);
+    width: 45%;
+
+    @include mobile {
+      width: 90%;
+    }
+  }
 
   .title {
-    font-size: 25px; //aumentato di 5px
+    font-size: $h3-desktop;
     margin-bottom: 5px;
   }
 
   .text {
-    font-size: $body-mobile;
     font-weight: 300;
+    font-size: $body-desktop;
+    line-height: 1.4;
     margin-bottom: 20px;
   }
 
-  .ctaLink {
-    text-decoration: underline;
-    margin-bottom: 8px;
-  }
-
   .imageSection {
-    width: 350px;
-    height: 180px;
+    width: 50%;
+    height: 500px;
     position: relative;
+
+    @include mobile {
+      width: 100%;
+    }
 
     .image {
       width: 100%;
@@ -31,43 +50,27 @@
     }
 
     .countDown {
-      width: 150px;
+      width: 100%;
       background-color: $white;
       position: absolute;
-      top: 0;
-      right: 0;
+      bottom: 20px;
+      left: 20px;
       padding: 5px 12px;
 
       .countDown__text {
         color: $mid-grey;
         font-size: 12px;
+        margin-right: 10px;
+        margin-left: 5px;
+        font-weight: 300;
       }
 
       .count {
         color: $dark;
         font-size: 25px;
         font-weight: bold;
+        margin-left: 5px;
       }
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .JoinEventSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 30px 40px;
-
-    .title {
-      font-size: $h3-desktop;
-    }
-
-    .imageSection {
-      width: 600px;
-      height: 350px;
-      position: relative;
     }
   }
 }
