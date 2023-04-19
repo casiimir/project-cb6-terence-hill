@@ -14,7 +14,7 @@ const Footer = () => {
             alt="logo"
             priority
           />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+          <p>La tua destinazione per i migliori eventi.</p>
         </div>
         <ul className={styles.link}>
           <li>

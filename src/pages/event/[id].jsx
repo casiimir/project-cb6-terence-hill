@@ -7,7 +7,7 @@ import styles from "@/styles/pages/Event.module.scss";
 
 // main layout
 import MainLayout from "@/layouts/mainLayout";
-import CtaButton from "@/components/ctaButton";
+import SecondaryButton from "@/components/secondaryButton";
 
 export default function EventDetails({ data }) {
   function deleteSeconds(time) {
@@ -103,7 +103,7 @@ export default function EventDetails({ data }) {
               <p>{data.price}€</p>
             </div>
             <Link href="/cart" onClick={onHandleClick}>
-              <CtaButton text={"COMPRA IL BIGLIETTO"} />
+              <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
             </Link>
           </div>
         </MainLayout>

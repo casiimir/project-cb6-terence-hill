@@ -5,67 +5,47 @@ import Link from "next/link";
 const HeroImage = () => {
   return (
     <div className={styles.HeroImage}>
-      <div className={styles.music__card}>
-        <Link href={"/events/concert"}>
-          <Image
-            className={styles.img}
-            src="https://images.unsplash.com/photo-1505282722405-413748d3de7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80"
-            width={1000}
-            height={300}
-            alt="hero image"
-            priority
-          />
-          <p className={styles.text}>Musica</p>
-        </Link>
+      <div className={styles.info}>
+        <h3>Dentro EventHub</h3>
+        <p>
+          {
+            "Esplora le diverse categorie disponibili e a naviga tra le opzioni a disposizione. Una volta individuati gli eventi che più ti interessano, potrai procedere all'acquisto dei biglietti in modo rapido e semplice."
+          }
+        </p>
       </div>
-      <div className={styles.theatre__card}>
-        <Link href={"/events/opera"}>
+      <div className={styles.cardList}>
+        <Link href={"/events/concert"} className={styles.image}>
           <Image
             className={styles.img}
-            src="https://images.unsplash.com/photo-1524580477099-d6ef682e2a2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-            width={1000}
-            height={300}
+            src="https://images.unsplash.com/photo-1468392788711-903a924761a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80"
             alt="hero image"
-            priority
+            layout="fill"
+            objectFit="cover"
           />
-          <p className={styles.text}>Arte & Teatro</p>
+          <p className={styles.text}>Concerti</p>
         </Link>
-      </div>
-      {/* <div className={styles.festival__card}>
-        <Image
-          className={styles.img}
-          src="https://images.unsplash.com/photo-1603910234616-3b5f4a6be2b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-          width={1000}
-          height={300}
-          alt="hero image"
-          priority
-        />
-        <p className={styles.text}>Festival</p>
-      </div> */}
-      <div className={styles.festival__card}>
-        <Link href={"/events/sport"}>
+
+        <Link href={"/events/opera"} className={styles.image}>
           <Image
-            // onClick={() => handleCategoriaClick("sport")}
             className={styles.img}
-            src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
-            width={1000}
-            height={300}
+            src="https://images.unsplash.com/photo-1526568587-d726afa637de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80"
             alt="hero image"
-            priority
+            layout="fill"
+            objectFit="cover"
+          />
+          <p className={styles.text}>Opera</p>
+        </Link>
+        <Link href={"/events/sport"} className={styles.image}>
+          <Image
+            className={styles.img}
+            src="https://images.unsplash.com/photo-1544367946-af49aa3a7b86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="hero image"
+            layout="fill"
+            objectFit="cover"
           />
           <p className={styles.text}>Sport</p>
         </Link>
       </div>
-
-      {/* mobile */}
-      <Image
-        className={styles.image}
-        src="https://images.unsplash.com/photo-1505282722405-413748d3de7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80"
-        width={1000}
-        height={300}
-        alt="hero image"
-        priority
-      />
     </div>
   );
 };

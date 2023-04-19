@@ -3,7 +3,7 @@ import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import HamburgerMenu from "../hamburgerMenu";
-import { FiSearch, FiLogIn } from "react-icons/fi";
+import { FiSearch, FiShoppingCart } from "react-icons/fi";
 
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
@@ -29,6 +29,19 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
 
   return (
     <div className={styles.Navbar}>
+      <ul className={styles.nav}>
+        {/* <li className={styles.navItem}>
+          <Link href="/">Home</Link>
+        </li> */}
+        <li className={styles.navItem}>
+          <Link href="/events">Scopri gli eventi</Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link href="/about">Chi siamo</Link>
+        </li>
+        {/* <li className={styles.navItem}>Contacts</li> */}
+        {/* <li className={styles.navItem}>Newsletter</li> */}
+      </ul>
       <Link href="/">
         <Image
           className={styles.logo}
@@ -39,19 +52,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           priority
         />
       </Link>
-      <ul className={styles.nav}>
-        <li className={styles.navItem}>
-          <Link href="/">Home</Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/events">Eventi</Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/about">About</Link>
-        </li>
-        {/* <li className={styles.navItem}>Contacts</li> */}
-        <li className={styles.navItem}>Newsletter</li>
-      </ul>
+
       <div className={styles.search__section}>
         <form onSubmit={onHandleSubmit}>
           <input
@@ -66,9 +67,10 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
         <span className={styles.searchBtn}>
           <FiSearch onClick={InputOn} />
         </span>
-        <span className={styles.loginBtn}>
-          <FiLogIn />
-        </span>
+
+        <Link href="/cart" className={styles.cartBtn}>
+          <FiShoppingCart />
+        </Link>
       </div>
       <div
         className={styles.hamburgerMenu}

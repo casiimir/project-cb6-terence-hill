@@ -7,7 +7,7 @@ import MainLayout from "@/layouts/mainLayout";
 
 // components
 import CartList from "@/components/cartList";
-import CtaButton from "@/components/ctaButton";
+import SecondaryButton from "@/components/SecondaryButton";
 
 export default function Cart() {
   const [cartContext, setCartContext] = useState([]);
@@ -48,7 +48,7 @@ export default function Cart() {
             <hr className={styles.line} />
             <div className={styles.checkout}>
               <p>Totale: {priceCheckout}€</p>
-              <CtaButton text={"CHECKOUT"} />
+              <SecondaryButton text={"CHECKOUT"} />
             </div>
           </div>
         </MainLayout>
