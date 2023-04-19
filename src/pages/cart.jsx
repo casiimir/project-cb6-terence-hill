@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "@/styles/pages/Cart.module.scss";
 
@@ -9,6 +10,23 @@ import CartList from "@/components/cartList";
 import CtaButton from "@/components/ctaButton";
 
 export default function Cart() {
+  const [cartContext, setCartContext] = useState([]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const data = JSON.parse(localStorage.getItem("event")) || [];
+      setCartContext(data);
+    }
+  }, []);
+
+  const [priceCheckout, setPriceCheckout] = useState(0);
+
+  useEffect(() => {
+    setPriceCheckout(
+      cartContext.reduce((acc, data) => acc + data.price * data.qty, 0)
+    );
+  }, [cartContext]);
+
   return (
     <>
       <Head>
@@ -21,10 +39,15 @@ export default function Cart() {
         <MainLayout>
           <div className={styles.Cart}>
             <h3 className={styles.title}>Carrello:</h3>
-            <CartList />
+            <CartList
+              cartContext={cartContext}
+              setCartContext={setCartContext}
+              priceCheckout={priceCheckout}
+              setPriceCheckout={setPriceCheckout}
+            />
             <hr className={styles.line} />
             <div className={styles.checkout}>
-              <p>Totale: 45€</p>
+              <p>Totale: {priceCheckout}€</p>
               <CtaButton text={"CHECKOUT"} />
             </div>
           </div>
