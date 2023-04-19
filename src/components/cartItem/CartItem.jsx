@@ -4,7 +4,12 @@ import Image from "next/image";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "./cartItem.module.scss";
 
-const CartItem = ({ data, setCartContext }) => {
+const CartItem = ({
+  data,
+  setCartContext,
+  priceCheckout,
+  setPriceCheckout,
+}) => {
   const [valueQty, setValueQty] = useState(data.qty || 1);
 
   const plusQty = () => {
@@ -16,6 +21,7 @@ const CartItem = ({ data, setCartContext }) => {
       item.id === data.id ? { ...item, qty: newQty } : item
     );
     localStorage.setItem("event", JSON.stringify(newLocalStorageCart));
+    setPriceCheckout(priceCheckout + data.price);
   };
 
   const lessQty = () => {
@@ -34,6 +40,7 @@ const CartItem = ({ data, setCartContext }) => {
 
     localStorage.setItem("event", JSON.stringify([...newLocalStorageCart]));
     setCartContext(() => newLocalStorageCart);
+    setPriceCheckout(priceCheckout - data.price);
   };
 
   const removeSingleItem = () => {
@@ -46,6 +53,7 @@ const CartItem = ({ data, setCartContext }) => {
     }
     localStorage.setItem("event", JSON.stringify([...localStorageCartItems]));
     setCartContext(() => localStorageCartItems);
+    setPriceCheckout(priceCheckout - data.price * data.qty);
   };
 
   return (
@@ -85,7 +93,7 @@ const CartItem = ({ data, setCartContext }) => {
             </button>
           </div>
         </div>
-        <p>15€</p>
+        <p>{data.price}€</p>
       </div>
     </div>
   );

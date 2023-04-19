@@ -1,17 +1,14 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import styles from "./cartList.module.scss";
 
 import CartItem from "../cartItem";
 
-const CartList = () => {
-  const [cartContext, setCartContext] = useState([]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const data = JSON.parse(localStorage.getItem("event")) || [];
-      setCartContext(data);
-    }
-  }, []);
+const CartList = ({
+  cartContext,
+  setCartContext,
+  priceCheckout,
+  setPriceCheckout,
+}) => {
   return (
     <div className={styles.CartList}>
       {cartContext.length === 0 ? (
@@ -22,6 +19,8 @@ const CartList = () => {
             data={event}
             key={event.id}
             setCartContext={setCartContext}
+            priceCheckout={priceCheckout}
+            setPriceCheckout={setPriceCheckout}
           />
         ))
       )}

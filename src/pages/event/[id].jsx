@@ -100,6 +100,7 @@ export default function EventDetails({ data }) {
                 unica nel suo genere, con un artista di fama internazionale.
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
               </p>
+              <p>{data.price}€</p>
             </div>
             <Link href="/cart" onClick={onHandleClick}>
               <CtaButton text={"COMPRA IL BIGLIETTO"} />
@@ -118,7 +119,14 @@ export async function getServerSideProps(context) {
     `https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt` // come faccio a prendere id da data, array?
   );
   const res = await data.json();
-  console.log(data);
+  /**
+   * Returns a random number between min (inclusive) and max (exclusive)
+   */
+  const valuePrice = [15, 24, 28, 36, 60];
+  const randomIndex = Math.floor(Math.random() * valuePrice.length);
+  res.price = valuePrice[randomIndex];
+  res.qty = 1;
+
   return {
     props: {
       data: res,
