@@ -13,7 +13,7 @@ const CartList = () => {
     }
   }, []);
   return (
-    <div>
+    <div className={styles.CartList}>
       {cartContext.length === 0 ? (
         <p>Il tuo carrello è vuoto.</p>
       ) : (

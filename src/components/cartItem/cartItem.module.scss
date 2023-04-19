@@ -1,6 +1,7 @@
 .CartItem {
   @include flexbox(row, space-between, center);
   margin-bottom: 30px;
+  width: 100%;
 
   .artist {
     @include flexbox(row, flex-start, center, 20px);
