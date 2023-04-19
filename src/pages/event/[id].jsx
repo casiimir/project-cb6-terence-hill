@@ -1,30 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 
 import styles from "@/styles/pages/Event.module.scss";
-
-import { useRouter } from "next/router";
 
 // main layout
 import MainLayout from "@/layouts/mainLayout";
 import CtaButton from "@/components/ctaButton";
 
-// dati fetch
-import { useContext } from "react";
-import { DataContext } from "@/store/DataContext";
-import Link from "next/link";
-
 export default function EventDetails({ data }) {
-  // routing pagina dinamica
-  const items = useContext(DataContext);
-  const router = useRouter();
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // const query = router.query.id;
-
-  const event = items.find((show) => show.id === data.id);
-  // console.log("--------->", event);
-
   function deleteSeconds(time) {
     let timeArray = time.split(":");
     let newTime = timeArray[0] + ":" + timeArray[1];
@@ -33,10 +18,20 @@ export default function EventDetails({ data }) {
 
   const onHandleClick = () => {
     let localStorageItems = JSON.parse(localStorage.getItem("event")) || [];
-    localStorage.setItem(
-      "event",
-      JSON.stringify([...localStorageItems, event])
+    // localStorage.setItem("event", JSON.stringify([...localStorageItems, data]));
+
+    const isProductDataInsideLocalStorage = !localStorageItems.find(
+      (product) => product.id === data.id
     );
+
+    if (isProductDataInsideLocalStorage) {
+      localStorage.setItem(
+        "event",
+        JSON.stringify([...localStorageItems, data])
+      );
+    } else {
+      alert(`${data.name} is already in the cart`);
+    }
   };
 
   return (
@@ -53,9 +48,9 @@ export default function EventDetails({ data }) {
             <Image
               className={styles.image}
               src={
-                event.images[5].width > 1500
-                  ? event.images[5].url
-                  : event.images[2].url
+                data.images[5]?.width > 1500
+                  ? data.images[5]?.url
+                  : data.images[2]?.url
               }
               alt={data.name}
               width={1920}
@@ -67,7 +62,7 @@ export default function EventDetails({ data }) {
               <h2 className={styles.title}>{data.name}</h2>
             </div>
           </div>
-          {console.log(items)}
+          {/* {console.log(items)} */}
           <div className={styles.info}>
             <ul>
               <li>
@@ -120,7 +115,7 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
   console.log(context);
   const data = await fetch(
-    `https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt&locale=it-it&size=20` // come faccio a prendere id da data, array?
+    `https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=iCFC0FgcfYJsf9GbRJBPAW360lHj3sZt` // come faccio a prendere id da data, array?
   );
   const res = await data.json();
   console.log(data);
