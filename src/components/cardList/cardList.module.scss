@@ -1,7 +1,13 @@
 .CardList {
-  // border: 2px solid green;
   display: flex;
   flex-direction: column;
+  font-family: $font;
   gap: 30px;
   padding: 0 20px;
+  margin: 100px 0;
+
+  .category {
+    font-size: $h3-mobile;
+    color: $orange;
+  }
 }

@@ -58,8 +58,7 @@ export default function Category({ data }) {
       </Head>
       <MainLayout>
         <div>
-          <p>{category}</p>
-          <CardList data={data} />
+          <CardList data={data} category={category} />
         </div>
       </MainLayout>
     </>
