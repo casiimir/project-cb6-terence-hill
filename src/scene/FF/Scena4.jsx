@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Prov2 from '../../Prov/Prov2';
+import Fabio from '../../Prov/Fabio';
 import styles from "./scena4.module.scss";
 
-export default function Scena() {
+export default function Scena4() {
    return (
       <Canvas
          camera={{ position: [2, 1, 6.00], fov: 17 }}
@@ -15,11 +15,11 @@ export default function Scena() {
             borderRadius: '10px',
          }}
       >
-         <ambientLight intensity={0.22} />
+         <ambientLight intensity={0.5} />
          <ambientLight intensity={0.02} />
-         <directionalLight intensity={0.2} />
+         <directionalLight intensity={0.1} />
          <Suspense fallback={null}>
-            <Prov2 position={[0.025, -0.9, 0]} /> 
+            <Fabio position={[0.025, -0.9, 0]} /> 
             {/* // your model here */}
          </Suspense>
          <OrbitControls />

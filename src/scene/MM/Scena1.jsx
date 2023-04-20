@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Prov from '../../Prov/Prov';
+import Marilena from '../../Prov/Marilena';
 import styles from "./scena1.module.scss";
 
 export default function Scena() {
@@ -15,11 +15,11 @@ export default function Scena() {
             borderRadius: '10px',
          }}
       >
-         <ambientLight intensity={0.22} />
+         <ambientLight intensity={0.4} />
          <ambientLight intensity={0.02} />
          <directionalLight intensity={0.2} />
          <Suspense fallback={null}>
-            <Prov position={[0.025, -0.9, 0]} /> 
+            <Marilena position={[0.025, -0.9, 0]} /> 
             {/* // your model here */}
          </Suspense>
          <OrbitControls />
