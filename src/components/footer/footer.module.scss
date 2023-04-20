@@ -37,7 +37,7 @@
     .logo {
       margin: 2px 0 4px 0;
       width: 140px;
-      height: 45px;
+      object-fit: contain;
     }
     p {
       font-size: $didascalia-mobile;
@@ -95,6 +95,7 @@
 
     .link {
       list-style: none;
+
       li {
         font-size: 20px;
         font-weight: 300;

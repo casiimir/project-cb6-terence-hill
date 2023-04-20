@@ -9,8 +9,8 @@ const Footer = () => {
           <Image
             className={styles.logo}
             src="/img/eventhub_logo.png"
-            width={100}
-            height={100}
+            width={150}
+            height={70}
             alt="logo"
             priority
           />
