@@ -5,12 +5,14 @@ import Link from "next/link";
 import HamburgerMenu from "../hamburgerMenu";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
 
 const Navbar = ({ showHamburger, setShowHamburger }) => {
-  // const {state, dispatch } = useContext(DataContext);
-  // const [showHamburger, setShowHamburger] = useState(false);
+  const router = useRouter();
+
+  const { state, dispatch } = useContext(DataContext);
 
   const [searchOn, setSearchOn] = useState(false);
 
@@ -24,24 +26,22 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    <Link href="/events/results" />;
+    router.push(`/search/${state.inputValue}`);
   };
 
   return (
     <div className={styles.Navbar}>
-      <ul className={styles.nav}>
-        {/* <li className={styles.navItem}>
-          <Link href="/">Home</Link>
-        </li> */}
-        <li className={styles.navItem}>
-          <Link href="/events">Scopri gli eventi</Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/about">Chi siamo</Link>
-        </li>
-        {/* <li className={styles.navItem}>Contacts</li> */}
-        {/* <li className={styles.navItem}>Newsletter</li> */}
-      </ul>
+      <form onSubmit={onHandleSubmit}>
+        <input
+          onChange={saveSearchedInput}
+          type="text"
+          name="text"
+          placeholder="Cerca artista"
+          className={searchOn ? `${styles.inputVisibility}` : null}
+        />
+        <FiSearch className={styles.searchBtn} onClick={InputOn} />
+      </form>
+
       <Link href="/">
         <Image
           className={styles.logo}
@@ -54,23 +54,19 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
       </Link>
 
       <div className={styles.search__section}>
-        <form onSubmit={onHandleSubmit}>
-          <input
-            onChange={saveSearchedInput}
-            type="text"
-            name="text"
-            placeholder="Search event"
-            className={searchOn ? `${styles.inputVisibility}` : null}
-          />
-        </form>
-
-        <span className={styles.searchBtn}>
-          <FiSearch onClick={InputOn} />
-        </span>
-
-        <Link href="/cart" className={styles.cartBtn}>
-          <FiShoppingCart />
-        </Link>
+        <ul className={styles.nav}>
+          <li className={styles.navItem}>
+            <Link href="/events">Scopri gli eventi</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/about">Chi siamo</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/cart">
+              <FiShoppingCart className={styles.cartBtn} />
+            </Link>
+          </li>
+        </ul>
       </div>
       <div
         className={styles.hamburgerMenu}
