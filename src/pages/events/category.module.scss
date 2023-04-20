@@ -10,10 +10,12 @@
   @include tablet {
     font-size: $body-desktop;
     padding: 0 40px;
+    margin-left: 40px;
   }
 
   @include desktop {
     font-size: $h4-desktop;
     padding: 0 40px;
+    margin-left: 120px;
   }
 }

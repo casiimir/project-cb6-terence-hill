@@ -24,7 +24,7 @@ export default function Events() {
       </Head>
       <MainLayout>
         <div className={styles.Events}>
-          <p>Scopri gli eventi</p>
+          <p className={styles.subtitle}>Scopri gli eventi</p>
           <CardList data={items.state.fetchedData} />
         </div>
       </MainLayout>

@@ -6,11 +6,27 @@
   gap: 20px;
   padding: 30px 20px;
   position: absolute;
+  margin-top: 80px;
+
+  @include tablet {
+    margin-top: 80px;
+  }
+
+  @include desktop {
+  }
 
   .upper {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+
+    @include tablet {
+      margin: 0 40px 0 40px;
+    }
+
+    @include desktop {
+      margin: 60px 120px 0px;
+    }
 
     .left__section {
       width: 300px;
@@ -20,6 +36,8 @@
     }
     .logo {
       margin: 2px 0 4px 0;
+      width: 140px;
+      height: 45px;
     }
     p {
       font-size: $didascalia-mobile;
@@ -29,9 +47,14 @@
 
     .link {
       list-style: none;
+
       a {
         font-size: $didascalia-mobile;
         font-weight: 300;
+
+        // @include desktop {
+        //   margin-bottom: 0;
+        // }
       }
     }
   }
@@ -44,6 +67,14 @@
     display: flex;
     justify-content: space-between;
 
+    @include tablet {
+      margin: 0 40px 0 40px;
+    }
+
+    @include desktop {
+      margin: 0px 120px 0px;
+    }
+
     p {
       font-size: $didascalia-mobile;
       font-weight: 300;
@@ -54,8 +85,6 @@
 @media screen and (min-width: 768px) {
   .Footer {
     .logo {
-      width: 150px;
-      height: 150px;
     }
 
     .left__section {

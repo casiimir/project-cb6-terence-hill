@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={styles.left__section}>
           <Image
             className={styles.logo}
-            src="/img/logo.png"
+            src="/img/eventhub_logo.png"
             width={100}
             height={100}
             alt="logo"

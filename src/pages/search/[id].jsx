@@ -1,5 +1,6 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
+import styles from "../../styles/pages/Search.module.scss";
 
 import CardList from "@/components/cardList";
 
@@ -20,14 +21,17 @@ export default function searchResults({ data }) {
         <link rel="icon" href="/img/favicon.png" />
       </Head>
       <MainLayout>
-        {data?._embedded ? (
-          // <h1>{data._embedded.events[0].name}</h1>
-          <CardList data={data._embedded.events} />
-        ) : (
-          <h1>Artista non trovato</h1>
-        )}
-        {/* <p>{category}</p>
+        <div className={styles.Search}>
+          <p className={styles.results}>Risultati</p>
+          {data?._embedded ? (
+            // <h1>{data._embedded.events[0].name}</h1>
+            <CardList data={data._embedded.events} />
+          ) : (
+            <h1 className={styles.notfound}>Artista non trovato</h1>
+          )}
+          {/* <p>{category}</p>
           <CardList data={eventi} /> */}
+        </div>
       </MainLayout>
     </>
   );
