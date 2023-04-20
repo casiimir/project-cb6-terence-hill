@@ -45,18 +45,21 @@ export default function EventDetails({ data }) {
       <main className={styles.main}>
         <MainLayout>
           <div className={styles.imageContainer}>
-            <Image
-              className={styles.image}
-              src={
-                data.images[5]?.width > 1500
-                  ? data.images[5]?.url
-                  : data.images[2]?.url
-              }
-              alt={data.name}
-              width={1920}
-              height={550}
-              layout="responsive"
-            />
+            <div className={styles.image}>
+              <Image
+                className={styles.img}
+                src={
+                  data.images[5]?.width > 1500
+                    ? data.images[5]?.url
+                    : data.images[2]?.url
+                }
+                alt={data.name}
+                width={1920}
+                height={550}
+                priority
+                // layout="responsive"
+              />
+            </div>
             <div className={styles.cover}>
               <div className={styles.overlay}></div>
               <h2 className={styles.title}>{data.name}</h2>

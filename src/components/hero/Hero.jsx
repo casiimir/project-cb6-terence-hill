@@ -33,10 +33,13 @@ const Hero = () => {
   return (
     <div className={styles.Hero}>
       <Image
+        className={styles.images}
         src={images[currentImageIndex]}
         alt={"hero_image"}
-        layout="fill"
-        objectFit="cover"
+        width={1920}
+        height={800}
+        // layout="fill"
+        // objectFit="cover"
       />
       <h1 className={styles.title}>
         La tua destinazione <br /> per i migliori eventi.

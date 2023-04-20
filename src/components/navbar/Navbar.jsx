@@ -76,9 +76,15 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
         className={styles.hamburgerMenu}
         onClick={() => setShowHamburger((prev) => !prev)}
       >
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
+        <span
+          className={`${showHamburger ? styles.open1 : styles.line}`}
+        ></span>
+        <span
+          className={`${showHamburger ? styles.open2 : styles.line}`}
+        ></span>
+        <span
+          className={`${showHamburger ? styles.open3 : styles.line}`}
+        ></span>
       </div>
 
       {showHamburger && <HamburgerMenu />}

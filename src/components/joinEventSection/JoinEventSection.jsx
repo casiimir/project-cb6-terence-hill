@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import SecondaryButton from "../SecondaryButton";
+import SecondaryButton from "@/components/secondaryButton";
 
 const JoinEventSection = ({ item }) => {
   const [timeRemaining, setTimeRemaining] = useState("");
@@ -53,7 +53,11 @@ const JoinEventSection = ({ item }) => {
       <div className={styles.imageSection}>
         <Image
           className={styles.image}
-          src={item?.images[5].url}
+          src={
+            item
+              ? item.images[5].url
+              : "https://s1.ticketm.net/dam/a/c90/67a18d21-394f-4afe-84f9-15560d797c90_1652911_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+          }
           width={1000}
           height={1000}
           alt="hero image"

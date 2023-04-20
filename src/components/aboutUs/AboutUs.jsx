@@ -8,10 +8,13 @@ const AboutUs = () => {
     <div className={styles.AboutUs}>
       <div className={styles.image}>
         <Image
+          className={styles.img}
           src="https://dice-media.imgix.net/homepage/work-with-partners-2.jpg?auto=format,compress&dpr=1"
           alt="hero image"
-          layout="fill"
-          objectFit="cover"
+          width={600}
+          height={600}
+          // layout="fill"
+          // objectFit="cover"
         />
       </div>
       <div className={styles.textContent}>
