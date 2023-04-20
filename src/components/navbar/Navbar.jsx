@@ -48,7 +48,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           className={styles.logo}
           src="/img/eventhub_logo.png"
           width={150}
-          height={150}
+          height={70}
           alt="hero image"
           priority
         />
