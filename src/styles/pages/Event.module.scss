@@ -1,7 +1,7 @@
 .main {
-  width: 100%;
+  width: 100vw;
   font-family: $font;
-  margin-top: 100px;
+  margin-top: 10vh;
 
   .imageContainer {
     width: 100vw;
@@ -15,7 +15,8 @@
 
     .image {
       position: relative;
-      width: 100%;      height: 300px;
+      width: 100%;
+      height: 300px;
       overflow: hidden;
 
       @include tablet {
@@ -24,7 +25,6 @@
       @include desktop {
         height: 480px;
         // border: 2px solid yellow;
-
       }
 
       .img {
@@ -84,7 +84,7 @@
 
   .mainSection {
     border: 1px solid red;
-    width: 100%;
+    width: 80vw;
     display: flex;
     flex-direction: column;
 
@@ -93,10 +93,6 @@
       flex-direction: column;
       justify-content: space-between;
       font-size: $body-desktop;
-    }
-
-
-    @include tablet {
       padding: 0 20px;
       margin: 0 40px;
     }
@@ -111,90 +107,90 @@
       @include flexbox(column, flex-start, flex-start, 10px);
       margin-top: 20px;
 
-    @include desktop {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      font-size: $body-desktop;
-    }
-
-
-    .info {
-      padding: 0 40px;
-      @include flexbox(column, flex-start, flex-start, 30px);
-
-      @include mobile {
-        padding: 0 20px;
-      }
-
-      ul {
-        list-style: none;
-        @include flexbox(column, flex-start, flex-start, 10px);
-        margin-top: 20px;
-
-        li {
-          @include flexbox(row, flex-start, flex-start, 10px);
-          font-size: $body-mobile;
-          font-weight: 300;
-
-          @include desktop {
-            font-size: $body-desktop;
-          }
-        }
-      }
-
-      .description {
-        h3 {
-          font-size: $h3-mobile;
-        }
-        p {
-          font-size: $body-mobile;
-          font-weight: 300;
-          line-height: 1.3em;
-          margin-top: 5px;
-          max-width: 500px;
-
-          @include desktop {
-            font-size: $body-desktop;
-            max-width: 68%;
-          }
-        }
-      }
-    }
-
-    .mapContent {
-      width: 390px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 20px;
-      margin-top: 45px;
-
-      .textSection {
+      @include desktop {
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
+        font-size: $body-desktop;
+      }
 
-        .mapTitle {
-          font-size: $h3-mobile;
+      .info {
+        padding: 0 40px;
+        @include flexbox(column, flex-start, flex-start, 30px);
+
+        @include mobile {
+          padding: 0 20px;
         }
 
-        .fullScreen {
-          &:hover {
-            text-decoration: underline;
-          }
+        ul {
+          list-style: none;
+          @include flexbox(column, flex-start, flex-start, 10px);
+          margin-top: 20px;
 
-          a {
-            font-size: $didascalia-mobile;
-            text-decoration: underline;
+          li {
+            @include flexbox(row, flex-start, flex-start, 10px);
+            font-size: $body-mobile;
+            font-weight: 300;
+
+            @include desktop {
+              font-size: $body-desktop;
+            }
+          }
+        }
+
+        .description {
+          h3 {
+            font-size: $h3-mobile;
+          }
+          p {
+            font-size: $body-mobile;
+            font-weight: 300;
+            line-height: 1.3em;
+            margin-top: 5px;
+            max-width: 500px;
+
+            @include desktop {
+              font-size: $body-desktop;
+              max-width: 68%;
+            }
           }
         }
       }
 
-      .map {
-        border-radius: 8px;
+      .mapContent {
+        width: 390px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 20px;
+        margin-top: 45px;
+
+        .textSection {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          .mapTitle {
+            font-size: $h3-mobile;
+          }
+
+          .fullScreen {
+            &:hover {
+              text-decoration: underline;
+            }
+
+            a {
+              font-size: $didascalia-mobile;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .map {
+          border-radius: 8px;
+        }
       }
     }
   }

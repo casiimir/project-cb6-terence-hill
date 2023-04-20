@@ -74,5 +74,13 @@ export async function getServerSideProps(context) {
         data: res._embedded.events,
       },
     };
+  } else {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/404",
+      },
+      props: {},
+    };
   }
 }
