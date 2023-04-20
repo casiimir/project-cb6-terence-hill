@@ -7,7 +7,7 @@ import MainLayout from "@/layouts/mainLayout";
 
 // components
 import CartList from "@/components/cartList";
-import SecondaryButton from "@/components/SecondaryButton";
+import SecondaryButton from "@/components/secondaryButton";
 import Modal from "@/components/modal";
 
 export default function Cart() {
@@ -59,8 +59,15 @@ export default function Cart() {
             <hr className={styles.line} />
             <div className={styles.checkout}>
               <p>Totale: {priceCheckout}€</p>
-              <button  className={styles.checkoutBtn} onClick={onHandleModalOpen}><SecondaryButton text={"CHECKOUT"}/></button>
-              <Modal isOpen={isModalOpen} onClose={onHandleModalClose}  />
+              {/* <button
+                className={styles.checkoutBtn}
+                onClick={onHandleModalOpen}
+              > */}
+              <div onClick={onHandleModalOpen}>
+                <SecondaryButton text={"CHECKOUT"} />
+              </div>
+              {/* </button> */}
+              <Modal isOpen={isModalOpen} onClose={onHandleModalClose} />
             </div>
           </div>
         </MainLayout>

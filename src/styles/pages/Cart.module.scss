@@ -4,6 +4,7 @@
   margin: 15vh 0px 5vh 0px;
   padding: 0px 30px;
   width: 100%;
+  min-height: 45vh;
 
   .line {
     width: 100%;
@@ -14,7 +15,7 @@
     @include flexbox(row, flex-end, center, 30px);
   }
 
-  .checkoutBtn{
+  .checkoutBtn {
     background-color: transparent;
     border: 1px solid $dark;
   }
