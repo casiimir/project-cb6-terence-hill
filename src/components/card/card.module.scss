@@ -30,11 +30,11 @@
       cursor: pointer;
 
       @include tablet {
-        font-size: $h4-desktop;
+        font-size: $h3-desktop;
       }
 
       @include desktop {
-        font-size: $h3-desktop;
+        font-size: $h2-desktop;
         max-width: 70%;
       }
     }

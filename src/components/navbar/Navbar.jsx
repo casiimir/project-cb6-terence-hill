@@ -45,7 +45,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
       <Link href="/">
         <Image
           className={styles.logo}
-          src="/img/logo.png"
+          src="/img/eventhub_logo.png"
           width={150}
           height={150}
           alt="hero image"

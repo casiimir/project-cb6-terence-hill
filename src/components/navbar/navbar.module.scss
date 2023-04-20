@@ -17,6 +17,10 @@
     display: none;
   }
 
+  .logo {
+    object-fit: contain;
+  }
+
   .hamburgerMenu {
     width: 25px;
     display: flex;
@@ -59,7 +63,11 @@
 
 @media screen and (min-width: 900px) {
   .Navbar {
-    padding: 0 40px;
+    padding: 0 120px;
+
+    @include tablet {
+      padding: 0 80px;
+    }
 
     form {
       display: block;
@@ -76,6 +84,10 @@
         border-radius: 25px;
         border: none;
         padding: 10px 40px;
+
+        @include tablet {
+          max-width: 170px;
+        }
       }
 
       .searchBtn {
@@ -113,6 +125,8 @@
       cursor: pointer;
       top: -30px;
       left: calc(50% - 75px);
+      width: 180px;
+      object-fit: contain;
     }
 
     .search__section {

@@ -1,6 +1,16 @@
 .Events {
-  margin-top: 130px;
   font-family: $font;
+  margin-top: 130px;
+
+  .subtitle {
+    @include tablet {
+      margin-left: 40px;
+    }
+
+    @include desktop {
+      margin-left: 120px;
+    }
+  }
 
   p {
     color: $orange;

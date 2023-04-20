@@ -1,10 +1,9 @@
 .HeroImage {
   width: 100vw;
-  padding: 80px 120px;
   background-color: $dark;
 
   @include tablet {
-    padding: 80px 80px;
+    padding: 80px 80px 0 80px;
   }
 
   @include mobile {
