@@ -7,7 +7,7 @@ import styles from "./scena5.module.scss";
 export default function Scena5() {
    return (
       <Canvas
-         camera={{ position: [0, 0, 6.00], fov: 17 }}
+         camera={{ position: [2, 1, 6.00], fov: 17 }}
          style={{
             backgroundColor: '#1c1c1c',
             width: '300px',
