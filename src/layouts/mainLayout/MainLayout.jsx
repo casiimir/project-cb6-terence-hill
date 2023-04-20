@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
       <div className={showHamburger ? styles.children : undefined}>
         {children}
       </div>
-      <Footer />
+      <Footer className={showHamburger ? styles.children : undefined} />
     </div>
   );
 };
