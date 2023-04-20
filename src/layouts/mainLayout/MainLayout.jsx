@@ -12,7 +12,9 @@ const MainLayout = ({ children }) => {
         showHamburger={showHamburger}
         setShowHamburger={setShowHamburger}
       />
-      <div className={showHamburger && styles.children}>{children}</div>
+      <div className={showHamburger ? styles.children : undefined}>
+        {children}
+      </div>
       <Footer />
     </div>
   );

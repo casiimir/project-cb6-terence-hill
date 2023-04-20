@@ -10,7 +10,6 @@ export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
   useEffect(() => {
-    console.log("fetchingggg");
     fetchItems()
       .then((events) => dispatch({ type: "SAVE_DATA", payload: events }))
       .catch((error) => console.log(error));

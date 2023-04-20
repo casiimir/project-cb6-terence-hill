@@ -19,8 +19,10 @@ const HeroImage = () => {
             className={styles.img}
             src="https://images.unsplash.com/photo-1468392788711-903a924761a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80"
             alt="hero image"
-            layout="fill"
-            objectFit="cover"
+            width={600}
+            height={600}
+            // layout="fill"
+            // objectFit="cover"
           />
           <p className={styles.text}>Concerti</p>
         </Link>
@@ -30,8 +32,10 @@ const HeroImage = () => {
             className={styles.img}
             src="https://images.unsplash.com/photo-1526568587-d726afa637de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80"
             alt="hero image"
-            layout="fill"
-            objectFit="cover"
+            width={600}
+            height={600}
+            // layout="fill"
+            // objectFit="cover"
           />
           <p className={styles.text}>Opera</p>
         </Link>
@@ -40,8 +44,10 @@ const HeroImage = () => {
             className={styles.img}
             src="https://images.unsplash.com/photo-1544367946-af49aa3a7b86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
             alt="hero image"
-            layout="fill"
-            objectFit="cover"
+            width={600}
+            height={600}
+            // layout="fill"
+            // objectFit="cover"
           />
           <p className={styles.text}>Sport</p>
         </Link>

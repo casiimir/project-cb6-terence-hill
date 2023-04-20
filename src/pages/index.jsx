@@ -6,11 +6,11 @@ import MainLayout from "@/layouts/mainLayout";
 
 // home page components
 import Hero from "@/components/hero";
-import TextHero from "@/components/textHero";
+// import TextHero from "@/components/textHero";
 import HeroImage from "@/components/heroImage";
 import JoinEventSection from "@/components/joinEventSection";
 import AboutUs from "@/components/aboutUs";
-import BuyTicketSection from "@/components/buyTicketSection";
+// import BuyTicketSection from "@/components/buyTicketSection";
 
 // dati fetch
 import { useContext } from "react";

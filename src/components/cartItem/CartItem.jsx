@@ -84,7 +84,12 @@ const CartItem = ({
         <div className={styles.quantityInfo}>
           <div className={styles.quantityContainer}>
             <FiMinus onClick={lessQty} className={styles.minus} />
-            <input type="text" value={valueQty} className={styles.quantity} />
+            <input
+              className={styles.quantity}
+              readOnly
+              type="text"
+              value={valueQty}
+            />
             <FiPlus onClick={plusQty} className={styles.plus} />
           </div>
           <div>

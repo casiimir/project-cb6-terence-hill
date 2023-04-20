@@ -11,6 +11,10 @@
     height: 130px;
     position: relative;
 
+    &:hover .title {
+      color: $orange;
+    }
+
     @include tablet {
       height: 200px;
     }
@@ -24,10 +28,6 @@
       z-index: 1;
       position: absolute;
       cursor: pointer;
-
-      &:hover {
-        color: $orange;
-      }
 
       @include tablet {
         font-size: $h4-desktop;
