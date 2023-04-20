@@ -38,6 +38,18 @@ export default function Cart() {
     setIsModalOpen(true);
   };
 
+  const [modalText, setModalText] = useState("");
+
+  useEffect(() => {
+    if (cartContext.length > 0) {
+      setModalText("Complimenti per il tuo acquisto!");
+    } else {
+      setModalText("il tuo carrello è vuoto!");
+    }
+  }, [cartContext])
+  
+  
+
   return (
     <>
       <Head>
@@ -67,7 +79,10 @@ export default function Cart() {
                 <SecondaryButton text={"CHECKOUT"} />
               </div>
               {/* </button> */}
-              <Modal isOpen={isModalOpen} onClose={onHandleModalClose} />
+             
+               <Modal isOpen={isModalOpen} onClose={onHandleModalClose} modalText={modalText}/> 
+               
+              
             </div>
           </div>
         </MainLayout>
