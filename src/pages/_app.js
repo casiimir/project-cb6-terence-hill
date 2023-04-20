@@ -5,6 +5,8 @@ import { DataContext } from "@/store/DataContext";
 import { useReducer } from "react";
 import { useEffect, useContext } from "react";
 import { fetchItems } from "@/utils/http";
+import { Montserrat } from "next/font/google";
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -16,7 +18,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <main>
+    <main className={montserrat.className}>
       <DataContext.Provider value={{ state, dispatch }}>
         <Component {...pageProps} />
       </DataContext.Provider>

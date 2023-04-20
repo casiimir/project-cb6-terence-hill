@@ -16,6 +16,12 @@ import AboutUs from "@/components/aboutUs";
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
 
+import { Anton } from "next/font/google";
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function Home() {
   const items = useContext(DataContext);
 
@@ -33,7 +39,7 @@ export default function Home() {
       <main className={styles.HomePage}>
         <MainLayout>
           {/* <TextHero /> */}
-          <Hero />
+          <Hero className={anton.className} />
           <JoinEventSection item={items.state.fetchedData[0]} />
           <AboutUs />
           <HeroImage />
