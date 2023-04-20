@@ -1,4 +1,5 @@
 .main {
+  width: 100%;
   font-family: $font;
 
   .imageContainer {
@@ -9,8 +10,14 @@
     .image {
       position: relative;
       width: 100%;
-      height: 550px;
       overflow: hidden;
+
+      @include tablet {
+        height: 550px;
+      }
+      @include desktop {
+        height: 550px;
+      }
 
       .img {
         width: 100%;
@@ -54,45 +61,102 @@
     }
   }
 
-  .info {
-    padding: 0 40px;
-    @include flexbox(column, flex-start, flex-start, 30px);
+  .mainSection {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-    @include mobile {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: $body-desktop;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: $body-desktop;
+    }
+
+    .info {
+      padding: 0 40px;
+      @include flexbox(column, flex-start, flex-start, 30px);
+
+      @include mobile {
+        padding: 0 20px;
+      }
+
+      ul {
+        list-style: none;
+        @include flexbox(column, flex-start, flex-start, 10px);
+        margin-top: 20px;
+
+        li {
+          @include flexbox(row, flex-start, flex-start, 10px);
+          font-size: $body-mobile;
+          font-weight: 300;
+
+          @include desktop {
+            font-size: $body-desktop;
+          }
+        }
+      }
+
+      .description {
+        h3 {
+          font-size: $h3-mobile;
+        }
+        p {
+          font-size: $body-mobile;
+          font-weight: 300;
+          line-height: 1.3em;
+          margin-top: 5px;
+          max-width: 500px;
+
+          @include desktop {
+            font-size: $body-desktop;
+            max-width: 68%;
+          }
+        }
+      }
+    }
+
+    .mapContent {
+      width: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
       padding: 0 20px;
-    }
+      margin-top: 45px;
 
-    ul {
-      list-style: none;
-      @include flexbox(column, flex-start, flex-start, 10px);
-      margin-top: 20px;
+      .textSection {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
-      li {
-        @include flexbox(row, flex-start, flex-start, 10px);
-        font-size: $body-mobile;
-        font-weight: 300;
+        .mapTitle {
+          font-size: $h3-mobile;
+        }
 
-        @include desktop {
-          font-size: $body-desktop;
+        .fullScreen {
+          &:hover {
+            text-decoration: underline;
+          }
+
+          a {
+            font-size: $didascalia-mobile;
+            text-decoration: underline;
+          }
         }
       }
-    }
 
-    .description {
-      h3 {
-        font-size: $h3-mobile;
-      }
-      p {
-        font-size: $body-mobile;
-        font-weight: 300;
-        line-height: 1.3em;
-        margin-top: 5px;
-        max-width: 500px;
-
-        @include desktop {
-          font-size: $body-desktop;
-          max-width: 68%;
-        }
+      .map {
+        border-radius: 8px;
       }
     }
   }
