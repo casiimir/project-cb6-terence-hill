@@ -1,6 +1,6 @@
 .Navbar {
   width: 100%;
-  height: 12vh;
+  height: 10vh;
   color: $white;
   font-family: $font;
   background-color: rgba(8, 8, 8, 0.642);
@@ -17,8 +17,43 @@
     display: none;
   }
 
+
   .logo {
     object-fit: contain;
+
+  .nav {
+    display: none;
+    gap: 20px;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      gap: 20px !important;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 40px !important;
+    }
+  }
+
+  .search__section {
+    display: none;
+    gap: 20px;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      gap: 20px !important;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 40px !important;
+    }
+
   }
 
   .hamburgerMenu {
@@ -54,14 +89,9 @@
       transform: rotate(-45deg) translate(2.5px, -5px);
     }
   }
-
-  .nav,
-  .search__section {
-    display: none;
-  }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
   .Navbar {
     padding: 0 120px;
 
@@ -113,9 +143,20 @@
         list-style: none;
         font-size: $didascalia-desktop;
         cursor: pointer;
+        position: relative;
 
         &:hover {
           text-decoration: underline;
+        }
+
+        .dot {
+          position: absolute;
+          top: -3px;
+          right: -5px;
+          width: 10px;
+          height: 10px;
+          background-color: $orange;
+          border-radius: 50%;
         }
       }
     }
@@ -123,17 +164,13 @@
     .logo {
       position: absolute;
       cursor: pointer;
-      top: -30px;
+      top: -38px;
       left: calc(50% - 75px);
       width: 180px;
       object-fit: contain;
     }
 
     .search__section {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-
       .cartBtn {
         font-size: 23px;
         cursor: pointer;

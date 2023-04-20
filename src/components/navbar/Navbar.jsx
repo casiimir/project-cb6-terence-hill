@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,14 +11,7 @@ import { DataContext } from "@/store/DataContext";
 
 const Navbar = ({ showHamburger, setShowHamburger }) => {
   const router = useRouter();
-
   const { state, dispatch } = useContext(DataContext);
-
-  const [searchOn, setSearchOn] = useState(false);
-
-  const InputOn = () => {
-    setSearchOn((prev) => !prev);
-  };
 
   const saveSearchedInput = (e) => {
     dispatch({ type: "SAVE_INPUT", payload: e.target.value });
@@ -29,6 +22,15 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
     router.push(`/search/${state.inputValue}`);
   };
 
+  // const [cartContext, setCartContext] = useState([]);
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const data = JSON.parse(localStorage.getItem("event")) || [];
+  //     setCartContext(data);
+  //   }
+  // }, []);
+
   return (
     <div className={styles.Navbar}>
       <form onSubmit={onHandleSubmit}>
@@ -37,12 +39,11 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           type="text"
           name="text"
           placeholder="Cerca artista"
-          className={searchOn ? `${styles.inputVisibility}` : null}
         />
-        <FiSearch className={styles.searchBtn} onClick={InputOn} />
+        <FiSearch className={styles.searchBtn} />
       </form>
 
-      <Link href="/">
+      <Link href="/" onClick={() => setShowHamburger((prev) => false)}>
         <Image
           className={styles.logo}
           src="/img/eventhub_logo.png"
@@ -64,6 +65,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           <li className={styles.navItem}>
             <Link href="/cart">
               <FiShoppingCart className={styles.cartBtn} />
+              {/* <div className={cartContext.length > 0 ? styles.dot : null}></div> */}
             </Link>
           </li>
         </ul>

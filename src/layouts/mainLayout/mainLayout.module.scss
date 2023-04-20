@@ -1,2 +1,15 @@
 .MainLayout {
+  .children {
+    position: fixed;
+    overflow-y: hidden;
+
+    @include tablet {
+      position: relative;
+      overflow-y: auto;
+    }
+    @include desktop {
+      position: relative;
+      overflow-y: auto;
+    }
+  }
 }
