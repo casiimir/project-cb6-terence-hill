@@ -5,12 +5,14 @@ import Link from "next/link";
 import HamburgerMenu from "../hamburgerMenu";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { DataContext } from "@/store/DataContext";
 
 const Navbar = ({ showHamburger, setShowHamburger }) => {
-  // const {state, dispatch } = useContext(DataContext);
-  // const [showHamburger, setShowHamburger] = useState(false);
+  const router = useRouter();
+
+  const { state, dispatch } = useContext(DataContext);
 
   const [searchOn, setSearchOn] = useState(false);
 
@@ -24,7 +26,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    <Link href="/events/results" />;
+    router.push(`/search/${state.inputValue}`);
   };
 
   return (

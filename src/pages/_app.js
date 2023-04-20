@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main>
-      <DataContext.Provider value={state.fetchedData}>
+      <DataContext.Provider value={{ state, dispatch }}>
         <Component {...pageProps} />
       </DataContext.Provider>
     </main>

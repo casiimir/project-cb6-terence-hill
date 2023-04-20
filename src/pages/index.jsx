@@ -31,7 +31,7 @@ export default function Home() {
         <MainLayout>
           {/* <TextHero /> */}
           <Hero />
-          <JoinEventSection item={items[0]} />
+          <JoinEventSection item={items.state.fetchedData[0]} />
           <AboutUs />
           <HeroImage />
           {/* <BuyTicketSection /> */}
