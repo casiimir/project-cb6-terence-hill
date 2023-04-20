@@ -8,6 +8,7 @@ import MainLayout from "@/layouts/mainLayout";
 // components
 import CartList from "@/components/cartList";
 import SecondaryButton from "@/components/SecondaryButton";
+import Modal from "@/components/modal";
 
 export default function Cart() {
   const [cartContext, setCartContext] = useState([]);
@@ -26,6 +27,16 @@ export default function Cart() {
       cartContext.reduce((acc, data) => acc + data.price * data.qty, 0)
     );
   }, [cartContext]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const onHandleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const onHandleModalOpen = () => {
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -48,7 +59,8 @@ export default function Cart() {
             <hr className={styles.line} />
             <div className={styles.checkout}>
               <p>Totale: {priceCheckout}€</p>
-              <SecondaryButton text={"CHECKOUT"} />
+              <button  className={styles.checkoutBtn} onClick={onHandleModalOpen}><SecondaryButton text={"CHECKOUT"}/></button>
+              <Modal isOpen={isModalOpen} onClose={onHandleModalClose}  />
             </div>
           </div>
         </MainLayout>

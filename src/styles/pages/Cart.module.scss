@@ -13,6 +13,11 @@
     width: 100%;
     @include flexbox(row, flex-end, center, 30px);
   }
+
+  .checkoutBtn{
+    background-color: transparent;
+    border: 1px solid $dark;
+  }
 }
 
 @media (max-width: 768px) {
