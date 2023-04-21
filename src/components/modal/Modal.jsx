@@ -5,26 +5,30 @@ import styles from "./modal.module.scss";
 
 const Modal = ({ isOpen, onClose, modalText }) => {
   if (!isOpen) return null;
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <div className={styles.Modal}>
       <div onClick={onClose} className={styles.overlay}></div>
       <div className={styles.modalContent}>
-        <h1 className={styles.modalH1}>{ modalText }</h1>
+        <h1 className={styles.modalH1}>{modalText}</h1>
         <hr className={styles.line} />
         {/* <p className={styles.modalP}>
           Siamo impazienti di incontrarti al tuo evento.
         </p> */}
 
         <div className={styles.modalLink}>
-        <Link href="/" className={styles.modalP}>
-          Torna alla home
-        </Link>
-        <Link href="#" onClick={() => router.back()} className={styles.modalP}>
-          Torna alla pagina precedente
-        </Link>
-      </div>
+          <Link href="/" className={styles.modalP}>
+            Torna alla home
+          </Link>
+          {/* <Link
+            href="#"
+            onClick={() => router.back()}
+            className={styles.modalP}
+          >
+            Torna alla pagina precedente
+          </Link> */}
+        </div>
       </div>
     </div>
   );
