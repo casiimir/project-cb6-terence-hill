@@ -135,7 +135,7 @@ export default function EventDetails({ data }) {
                 </div>
                 <div className={styles.price_section}>
                   <p className={styles.price}>{data.price}€</p>
-                  <Link href="/cart" onClick={onHandleClick}>
+                  <Link onClick={onHandleClick}>
                     <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
                   </Link>
                 </div>
