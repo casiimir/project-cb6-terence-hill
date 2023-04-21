@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Stefania2 from '../../Prov/Stefania2';
+import Stefania from '../../Prov/Stefania';
 import styles from "./scena2.module.scss";
 
 export default function Scena2() {
@@ -19,7 +19,7 @@ export default function Scena2() {
          <ambientLight intensity={0.02} />
          <directionalLight intensity={0.1} />
          <Suspense fallback={null}>
-            <Stefania2 position={[0.025, -0.9, 0]} /> 
+            <Stefania position={[0.025, -0.9, 0]} /> 
             {/* // your model here */}
          </Suspense>
          <OrbitControls />
