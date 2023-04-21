@@ -136,10 +136,9 @@ export default function EventDetails({ data }) {
                 <div className={styles.price_section}>
                   <p className={styles.price}>{data.price}€</p>
                   {/* <Link onClick={onHandleClick}> */}
-                  <SecondaryButton
-                    onClick={onHandleClick}
-                    text={"COMPRA IL BIGLIETTO"}
-                  />
+                  <div onClick={onHandleClick}>
+                    <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
+                  </div>
                   {/* </Link> */}
                 </div>
               </div>
