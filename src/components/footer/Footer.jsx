@@ -33,7 +33,7 @@ const Footer = () => {
           />
           <p>La tua destinazione per i migliori eventi.</p>
 
-          <p>qualcosaaaaaaaaaaa</p>
+          {/* <p>qualcosaaaaaaaaaaa</p> */}
         </div>
 
         <div className={styles.all_links}>
