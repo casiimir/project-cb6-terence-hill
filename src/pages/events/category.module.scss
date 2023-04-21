@@ -1,21 +1,56 @@
-.text {
+.container {
   margin-top: 130px;
-  font-family: $font;
-  color: $orange;
-  font-size: $body-mobile;
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding: 0 20px;
-
-  @include tablet {
-    font-size: $body-desktop;
-    padding: 0 40px;
-    margin-left: 40px;
-  }
+  @include flexbox(column, center, flex-start, 20px);
+  margin-right: 20px;
+  margin-bottom: 40px;
 
   @include desktop {
-    font-size: $h4-desktop;
-    padding: 0 40px;
-    margin-left: 80px;
+    @include flexbox(row, space-between, center);
+    margin-right: 120px;
+    margin-bottom: 40px;
+  }
+
+  @include tablet {
+    @include flexbox(row, space-between, center);
+    margin-right: 80px;
+    margin-bottom: 40px;
+  }
+
+  .text {
+    font-family: $font;
+    color: $orange;
+    font-size: $body-mobile;
+    font-weight: bold;
+    padding: 0 20px;
+
+    @include tablet {
+      font-size: $body-desktop;
+      padding: 0 40px;
+      margin-left: 40px;
+    }
+
+    @include desktop {
+      font-size: $h4-desktop;
+      padding: 0 40px;
+      margin-left: 80px;
+    }
+  }
+
+  .buttons {
+    @include flexbox(row, flex-end, center, 10px);
+    padding-left: 20px;
+
+    .button {
+      background-color: $white;
+      color: $dark;
+      border: none;
+      padding: 7px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

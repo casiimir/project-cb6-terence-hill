@@ -61,7 +61,23 @@ export default function EventDetails({ data }) {
                 src={
                   data.images[5]?.width > 1500
                     ? data.images[5]?.url
-                    : data.images[2]?.url
+                    : data.images[6]?.width > 1500
+                    ? data.images[6]?.url
+                    : data.images[1]?.width > 1500
+                    ? data.images[1]?.url
+                    : data.images[2]?.width > 1500
+                    ? data.images[2]?.url
+                    : data.images[3]?.width > 1500
+                    ? data.images[3]?.url
+                    : data.images[4]?.width > 1500
+                    ? data.images[4]?.url
+                    : data.images[7]?.width > 1500
+                    ? data.images[7]?.url
+                    : data.images[8]?.width > 1500
+                    ? data.images[8]?.url
+                    : data.images[9]?.width > 1500
+                    ? data.images[9]?.url
+                    : data.images[10]?.url
                 }
                 alt={data.name}
                 width={1920}
@@ -76,76 +92,87 @@ export default function EventDetails({ data }) {
             </div>
           </div>
           {/* {console.log(items)} */}
-          <div className={styles.mainSection}>
-            <div className={styles.info}>
-              <ul>
-                <li>
-                  <FiCalendar />
+
+          <div className={styles.bottom_section}>
+            <div className={styles.mainSection}>
+              <div className={styles.info}>
+                <ul>
+                  <li>
+                    <FiCalendar />
+                    <p>
+                      {data.dates.start.localDate
+                        .split("-")
+                        .reverse()
+                        .join("-")}
+                    </p>
+                  </li>
+                  <li>
+                    <FiClock />
+                    <p>{deleteSeconds(data.dates.start.localTime)}</p>
+                  </li>
+                  <li>
+                    <FiMapPin />
+                    <p>
+                      {data._embedded.venues[0].name} -{" "}
+                      {data._embedded.venues[0].city.name}
+                    </p>
+                  </li>
+                </ul>
+                <div className={styles.description}>
+                  <h3>Descrizione</h3>
                   <p>
-                    {data.dates.start.localDate.split("-").reverse().join("-")}
-                  </p>
-                </li>
-                <li>
-                  <FiClock />
-                  <p>{deleteSeconds(data.dates.start.localTime)}</p>
-                </li>
-                <li>
-                  <FiMapPin />
-                  <p>
-                    {data._embedded.venues[0].name} -{" "}
-                    {data._embedded.venues[0].city.name}
-                  </p>
-                </li>
-              </ul>
-              <div className={styles.description}>
-                <h3>Descrizione</h3>
-                <p>
-                  {`Non perdere l'opportunità di assistere all'evento ${
-                    data.name
-                  },
+                    {`Non perdere l'opportunità di assistere all'evento ${
+                      data.name
+                    },
                 in programma il ${data.dates.start.localDate
                   .split("-")
                   .reverse()
                   .join("-")} presso ${
-                    data._embedded.venues[0].name
-                  } alle ${deleteSeconds(
-                    data.dates.start.localTime
-                  )}. Preparati a vivere un'esperienza
+                      data._embedded.venues[0].name
+                    } alle ${deleteSeconds(
+                      data.dates.start.localTime
+                    )}. Preparati a vivere un'esperienza
                 unica nel suo genere, con un artista di fama internazionale.
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
-                </p>
-                <p>{data.price}€</p>
+                  </p>
+                  <p>{data.price}€</p>
+                </div>
+                <Link href="/cart" onClick={onHandleClick}>
+                  <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
+                </Link>
               </div>
+
               <div onClick={onHandleClick}>
                 <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
-                </div>   
+                </div>  
+
             </div>
-          </div>
-          {/* map */}
-          <div className={styles.mapContent}>
-            <div className={styles.textSection}>
-              <h3 className={styles.mapTitle}>Mappa evento</h3>
-              <small className={styles.fullScreen}>
-                <a
-                  href={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=es;z=14&amp;output=embed`}
-                  // style="color:#0000FF;text-align:left"
-                  target="_blank"
-                >
-                  Vista schermo intero
-                </a>
-              </small>
+            {/* map */}
+            <div className={styles.mapContent}>
+              <div className={styles.textSection}>
+                <h3 className={styles.mapTitle}>Mappa evento</h3>
+                <small className={styles.fullScreen}>
+                  <a
+                    href={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=es;z=14&amp;output=embed`}
+                    // style="color:#0000FF;text-align:left"
+                    target="_blank"
+                  >
+                    Vista schermo intero
+                  </a>
+                </small>
+              </div>
+              <iframe
+                className={styles.map}
+                width="350"
+                height="220"
+                frameBorder="0"
+                scrolling="yes"
+                marginHeight="0"
+                marginWidth="0"
+                src={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=it&z=14&amp&output=embed`}
+              ></iframe>
+              <br />
             </div>
-            <iframe
-              className={styles.map}
-              width="350"
-              height="220"
-              frameBorder="0"
-              scrolling="yes"
-              marginHeight="0"
-              marginWidth="0"
-              src={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=it&z=14&amp&output=embed`}
-            ></iframe>
-            <br />
           </div>
         </MainLayout>
       </main>
