@@ -19,6 +19,7 @@
 
   .logo {
     width: 150px;
+    height: auto;
     object-fit: contain;
   }
 
@@ -146,9 +147,10 @@
     .logo {
       position: absolute;
       cursor: pointer;
-      top: 0px;
+      top: 12px;
       left: calc(50% - 75px);
       width: 150px;
+      height: auto;
       object-fit: contain;
     }
 
