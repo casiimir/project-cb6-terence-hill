@@ -1,6 +1,7 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
 import styles from "./category.module.scss";
+import Link from "next/link";
 
 import CardList from "@/components/cardList";
 
@@ -23,10 +24,56 @@ export default function Category({ data }) {
       </Head>
       <MainLayout>
         <div>
-          {category === "concert" && <p className={styles.text}>Concerti</p>}
-          {category === "opera" && <p className={styles.text}>Opera</p>}
-          {category === "sport" && <p className={styles.text}>Sport</p>}
-          <CardList data={data} category={category} />
+          {category === "concert" && (
+            <div className={styles.container}>
+              <p className={styles.text}>Concerti</p>
+              <div className={styles.buttons}>
+                <Link href={"/events"}>
+                  <button className={styles.button}>Tutti gli eventi</button>
+                </Link>
+                <Link href={"/events/opera"}>
+                  <button className={styles.button}>Opera</button>
+                </Link>
+                <Link href={"/events/sport"}>
+                  <button className={styles.button}>Sport</button>
+                </Link>
+              </div>
+            </div>
+          )}
+          {category === "opera" && (
+            <div className={styles.container}>
+              <p className={styles.text}>Opera</p>
+              <div className={styles.buttons}>
+                <Link href={"/events"}>
+                  <button className={styles.button}>Tutti gli eventi</button>
+                </Link>
+                <Link href={"/events/concert"}>
+                  <button className={styles.button}>Concerti</button>
+                </Link>
+                <Link href={"/events/sport"}>
+                  <button className={styles.button}>Sport</button>
+                </Link>
+              </div>
+            </div>
+          )}
+          {category === "sport" && (
+            <div className={styles.container}>
+              <p className={styles.text}>Sport</p>
+              <div className={styles.buttons}>
+                <Link href={"/events"}>
+                  <button className={styles.button}>Tutti gli eventi</button>
+                </Link>
+                <Link href={"/events/concert"}>
+                  <button className={styles.button}>Concerti</button>
+                </Link>
+                <Link href={"/events/opera"}>
+                  <button className={styles.button}>Opera</button>
+                </Link>
+              </div>
+            </div>
+          )}
+
+          <CardList data={data} />
         </div>
       </MainLayout>
     </>
