@@ -29,9 +29,16 @@ export default function EventDetails({ data }) {
         "event",
         JSON.stringify([...localStorageItems, data])
       );
+      alert(`${data.name} added to cart`);
+
     } else {
       alert(`${data.name} is already in the cart`);
     }
+
+    if (!isProductDataInsideLocalStorage) {
+
+    }
+
   };
 
   return (
@@ -109,9 +116,9 @@ export default function EventDetails({ data }) {
                 </p>
                 <p>{data.price}€</p>
               </div>
-              <Link href="/cart" onClick={onHandleClick}>
+              <div onClick={onHandleClick}>
                 <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
-              </Link>
+                </div>   
             </div>
           </div>
           {/* map */}
