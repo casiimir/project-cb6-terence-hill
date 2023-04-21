@@ -128,11 +128,13 @@ export default function EventDetails({ data }) {
                 unica nel suo genere, con un artista di fama internazionale.
                 Acquista subito i tuoi biglietti e non rimarrai deluso!`}
                   </p>
-                  <p>{data.price}€</p>
                 </div>
-                <Link href="/cart" onClick={onHandleClick}>
-                  <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
-                </Link>
+                <div className={styles.price_section}>
+                  <p className={styles.price}>{data.price}€</p>
+                  <Link href="/cart" onClick={onHandleClick}>
+                    <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
+                  </Link>
+                </div>
               </div>
             </div>
             {/* map */}

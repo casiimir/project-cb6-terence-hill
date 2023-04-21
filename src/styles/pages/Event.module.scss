@@ -199,6 +199,18 @@
             }
           }
         }
+        .price_section {
+          // border: 2px solid red;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .price {
+            font-weight: bold;
+            color: $orange;
+            // margin-left: 30px;
+          }
+        }
       }
     }
     .mapContent {
