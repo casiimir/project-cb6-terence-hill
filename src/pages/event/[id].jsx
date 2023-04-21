@@ -113,33 +113,32 @@ export default function EventDetails({ data }) {
                 <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
               </Link>
             </div>
-
-            {/* map */}
-            <div className={styles.mapContent}>
-              <div className={styles.textSection}>
-                <h3 className={styles.mapTitle}>Mappa evento</h3>
-                <small className={styles.fullScreen}>
-                  <a
-                    href={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=es;z=14&amp;output=embed`}
-                    // style="color:#0000FF;text-align:left"
-                    target="_blank"
-                  >
-                    Vista schermo intero
-                  </a>
-                </small>
-              </div>
-              <iframe
-                className={styles.map}
-                width="350"
-                height="220"
-                frameBorder="0"
-                scrolling="yes"
-                marginHeight="0"
-                marginWidth="0"
-                src={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=it&z=14&amp&output=embed`}
-              ></iframe>
-              <br />
+          </div>
+          {/* map */}
+          <div className={styles.mapContent}>
+            <div className={styles.textSection}>
+              <h3 className={styles.mapTitle}>Mappa evento</h3>
+              <small className={styles.fullScreen}>
+                <a
+                  href={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=es;z=14&amp;output=embed`}
+                  // style="color:#0000FF;text-align:left"
+                  target="_blank"
+                >
+                  Vista schermo intero
+                </a>
+              </small>
             </div>
+            <iframe
+              className={styles.map}
+              width="350"
+              height="220"
+              frameBorder="0"
+              scrolling="yes"
+              marginHeight="0"
+              marginWidth="0"
+              src={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=it&z=14&amp&output=embed`}
+            ></iframe>
+            <br />
           </div>
         </MainLayout>
       </main>
