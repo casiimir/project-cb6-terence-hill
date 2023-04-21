@@ -6,7 +6,11 @@
   gap: 20px;
   padding: 30px 20px;
   position: absolute;
-  margin-top: 80px;
+  // margin-top: 80px;
+
+  @include mobile {
+    margin-top: 80px;
+  }
 
   @include tablet {
     margin-top: 80px;
@@ -17,27 +21,120 @@
     padding: 30px 0px;
   }
 
-  .upper {
+  .newsletter {
+    // border: 2px solid red;
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
+    margin: 60px 100px 30px 110px;
+
+    @include mobile {
+      margin: 0 0 30px 0;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include tablet {
+      padding: 10px 0px;
+      margin: 20px 30px 30px 40px;
+    }
+
+    .news_testo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include tablet {
+        width: 50%;
+      }
+
+      @include mobile {
+        width: 90%;
+      }
+
+      .titolo {
+        font-size: $h4-desktop;
+        color: $orange;
+      }
+    }
+
+    .news_input {
+      // border: 2px solid blue;
+      width: 30%;
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      justify-content: end;
+
+      @include tablet {
+        flex-wrap: wrap;
+        width: 40%;
+      }
+
+      @include mobile {
+        width: 90%;
+        justify-content: start;
+      }
+
+      .input_field {
+        font-family: $font;
+        height: 30px;
+        border-radius: 15px;
+        border: 1px solid $white;
+        background-color: $dark;
+        padding-left: 10px;
+        width: 60%;
+        color: $white;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .input_btn {
+        font-family: $font;
+        background-color: $orange;
+        border: none;
+        height: 30px;
+        padding: 0 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .upper {
+    // border: 2px solid red;
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 
     @include tablet {
-      margin: 0 40px 0 40px;
+      // margin: 0 40px 0 40px;
+      margin: 0 0px 0 40px;
     }
 
     @include desktop {
-      margin: 60px 120px 0px;
+      // margin: 60px 120px 0px;
+      margin: 30px 30px 0 110px;
+    }
+
+    @include mobile {
+      // margin: 60px 120px 0px;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .left__section {
-      width: 300px;
+      // border: 2px solid orange;
+      width: 200px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 10px;
     }
     .logo {
-      margin: 2px 0 4px 0;
+      margin: -10px 0 4px 0;
       width: 140px;
       height: auto;
       object-fit: contain;
@@ -48,16 +145,45 @@
       width: 160px;
     }
 
-    .link {
-      list-style: none;
+    .all_links {
+      // border: 2px solid green;
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
 
-      a {
-        font-size: $didascalia-mobile;
-        font-weight: 300;
+      @include tablet {
+        justify-content: flex-end;
+        width: 50%;
+      }
 
-        // @include desktop {
-        //   margin-bottom: 0;
-        // }
+      @include mobile {
+        flex-wrap: wrap;
+      }
+
+      .titoli_footer {
+        // border: 2px solid pink;
+
+        @include tablet {
+          justify-content: flex-end;
+          width: 50%;
+        }
+
+        .link {
+          // border: 2px solid yellow;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+
+          a {
+            font-size: $didascalia-mobile;
+            font-weight: 300;
+          }
+
+          .titoletto {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+        }
       }
     }
   }
