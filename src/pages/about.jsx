@@ -25,7 +25,7 @@ export default function About() {
       </Head>
       <MainLayout>
         <div className={styles.About}>
-          <h1 className={styles.About}>About</h1>
+          <h1 className={styles.titolo}>Chi siamo</h1>
           <div className={styles.aboutContainer}>
             <div className={styles.profile}>
               <div className={styles.profileImg}>
