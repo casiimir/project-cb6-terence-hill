@@ -17,7 +17,7 @@ const Card = ({ data }) => {
               src={
                 data.images[5].width > 1500
                   ? data.images[5].url
-                  : data.images[1].url
+                  : data.images[6].url
               }
               alt={data.name}
               width={1920}
