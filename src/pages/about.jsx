@@ -44,8 +44,9 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
-                        <AiFillGithub /> Github
+                      <p className={styles.textIcon}>
+                        <AiFillGithub />
+                        <span>Github</span>
                       </p>
                       <i className="fa-brands fa-github"></i>
                     </Link>
@@ -57,9 +58,10 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
+                      <p className={styles.textIcon}>
                         {" "}
-                        <AiFillLinkedin /> Linkedin
+                        <AiFillLinkedin />
+                        <span>Linkedin</span>
                       </p>
                       <i className="linkedin"></i>
                     </Link>
@@ -83,8 +85,9 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
-                        <AiFillGithub /> Github
+                      <p className={styles.textIcon}>
+                        <AiFillGithub />
+                        <span>Github</span>
                       </p>
                       <i className="fa-brands fa-github"></i>
                     </Link>
@@ -96,9 +99,10 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
+                      <p className={styles.textIcon}>
                         {" "}
-                        <AiFillLinkedin /> Linkedin
+                        <AiFillLinkedin />
+                        <span>Linkedin</span>
                       </p>
                       <i className="linkedin"></i>
                     </Link>
@@ -107,13 +111,7 @@ export default function About() {
               </div>
             </div>
             <div className={styles.profile}>
-              <div
-                className={styles.profileImg}
-
-                //  alt=""
-                //  width={350}
-                //  height={500}
-              >
+              <div className={styles.profileImg}>
                 <Scena3 />
               </div>
 
@@ -129,8 +127,9 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
-                        <AiFillGithub /> Github
+                      <p className={styles.textIcon}>
+                        <AiFillGithub />
+                        <span>Github</span>
                       </p>
                       <i className="fa-brands fa-github"></i>
                     </Link>
@@ -142,9 +141,10 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
+                      <p className={styles.textIcon}>
                         {" "}
-                        <AiFillLinkedin /> Linkedin
+                        <AiFillLinkedin />
+                        <span>Linkedin</span>
                       </p>
                       <i className="linkedin"></i>
                     </Link>
@@ -168,8 +168,9 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
-                        <AiFillGithub /> Github
+                      <p className={styles.textIcon}>
+                        <AiFillGithub />
+                        <span>Github</span>
                       </p>
                       <i className="fa-brands fa-github"></i>
                     </Link>
@@ -181,9 +182,10 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
+                      <p className={styles.textIcon}>
                         {" "}
-                        <AiFillLinkedin /> Linkedin
+                        <AiFillLinkedin />
+                        <span>Linkedin</span>
                       </p>
                       <i className="linkedin"></i>
                     </Link>
@@ -207,8 +209,9 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
-                        <AiFillGithub /> Github
+                      <p className={styles.textIcon}>
+                        <AiFillGithub />
+                        <span>Github</span>
                       </p>
                       <i className="fa-brands fa-github"></i>
                     </Link>
@@ -220,9 +223,10 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>
+                      <p className={styles.textIcon}>
                         {" "}
-                        <AiFillLinkedin /> Linkedin
+                        <AiFillLinkedin />
+                        <span>Linkedin</span>
                       </p>
                       <i className="linkedin"></i>
                     </Link>
