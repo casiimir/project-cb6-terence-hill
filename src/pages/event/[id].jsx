@@ -54,7 +54,23 @@ export default function EventDetails({ data }) {
                 src={
                   data.images[5]?.width > 1500
                     ? data.images[5]?.url
-                    : data.images[2]?.url
+                    : data.images[6]?.width > 1500
+                    ? data.images[6]?.url
+                    : data.images[1]?.width > 1500
+                    ? data.images[1]?.url
+                    : data.images[2]?.width > 1500
+                    ? data.images[2]?.url
+                    : data.images[3]?.width > 1500
+                    ? data.images[3]?.url
+                    : data.images[4]?.width > 1500
+                    ? data.images[4]?.url
+                    : data.images[7]?.width > 1500
+                    ? data.images[7]?.url
+                    : data.images[8]?.width > 1500
+                    ? data.images[8]?.url
+                    : data.images[9]?.width > 1500
+                    ? data.images[9]?.url
+                    : data.images[10]?.url
                 }
                 alt={data.name}
                 width={1920}

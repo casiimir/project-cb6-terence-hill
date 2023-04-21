@@ -2,7 +2,7 @@ import { initialState } from "@/store/globalState";
 import { mainReducer } from "@/store/reducer";
 import "@/styles/globals.css";
 import { DataContext } from "@/store/DataContext";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { useEffect, useContext } from "react";
 import { fetchItems } from "@/utils/http";
 import { Montserrat } from "next/font/google";
