@@ -1,6 +1,12 @@
+
+
+
 <div align="center">
-  <img src="./public/img/homepage.jpg" alt="EventHub" width=500/>
+  <img src="./public/img/homepage.jpg" alt="EventHub" width=1000/>
 </div>
+
+
+
 
 
 <h2 style="text-align: center;">EventHub - your destination for the best events </h2>
@@ -12,7 +18,10 @@
 
 <br>
 
-<hr>
+<div align="center">
+  <img src="./public/img/mockup_desktop.jpg" alt="EventHub" width=1200/>
+</div>
+
 
 <h2>Technologies used:</h2>
 <p>Our platform was developed using the following technologies:</p>
@@ -35,7 +44,18 @@
   </ul>
 
 <br>
-<hr>
+
+<h2>Mobile responsive</h2>
+
+<p>The design and build of our website, involved creating layouts that are optimized for small screens first before designing for larger screens.
+This approach ensured that website content is easily accessible and readable on mobile devices, such as smartphones and tablets, while still being adapted for desktop and laptop screens.
+</p>
+
+<div align="center">
+<div>  <img src="./public/img/phonemock.jpg" alt="EventHub" width=1200/>   </div>
+</div>
+
+
 
 ## How to run it:
 
