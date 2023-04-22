@@ -24,8 +24,9 @@ const HamburgerMenu = () => {
 
   return (
     <div className={styles.HamburgerMenu}>
-      <form onSubmit={onHandleSubmit}>
+      <form onSubmit={onHandleSubmit} className={styles.formHamburger}>
         <input
+          className={styles.inputHamburger}
           onChange={saveSearchedInput}
           type="text"
           name="text"
