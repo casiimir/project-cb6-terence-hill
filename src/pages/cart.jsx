@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import styles from "@/styles/pages/Cart.module.scss";
+import { CartContext } from "@/store/DataContext";
 
 // main layout
 import MainLayout from "@/layouts/mainLayout";
@@ -11,22 +12,14 @@ import SecondaryButton from "@/components/secondaryButton";
 import Modal from "@/components/modal";
 
 export default function Cart() {
-  const [cartContext, setCartContext] = useState([]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const data = JSON.parse(localStorage.getItem("event")) || [];
-      setCartContext(data);
-    }
-  }, []);
-
+  const context = useContext(CartContext);
   const [priceCheckout, setPriceCheckout] = useState(0);
 
   useEffect(() => {
     setPriceCheckout(
-      cartContext.reduce((acc, data) => acc + data.price * data.qty, 0)
+      context.nameContext.reduce((acc, data) => acc + data.price * data.qty, 0)
     );
-  }, [cartContext]);
+  }, [context.nameContext]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -41,12 +34,12 @@ export default function Cart() {
   const [modalText, setModalText] = useState("");
 
   useEffect(() => {
-    if (cartContext.length > 0) {
+    if (context.nameContext?.length > 0) {
       setModalText("Complimenti per il tuo acquisto!");
     } else {
       setModalText("Il tuo carrello è vuoto!");
     }
-  }, [cartContext]);
+  }, [context.nameContext]);
 
   return (
     <>
@@ -63,28 +56,20 @@ export default function Cart() {
         <MainLayout>
           <div className={styles.Cart}>
             <h3 className={styles.title}>Carrello:</h3>
-            <CartList
-              cartContext={cartContext}
-              setCartContext={setCartContext}
-              priceCheckout={priceCheckout}
-              setPriceCheckout={setPriceCheckout}
-            />
+            <CartList />
             <hr className={styles.line} />
             <div className={styles.checkout}>
               <p>Totale: {priceCheckout}€</p>
-              {/* <button
-                className={styles.checkoutBtn}
-                onClick={onHandleModalOpen}
-              > */}
+
               <div onClick={onHandleModalOpen}>
                 <SecondaryButton text={"CHECKOUT"} />
               </div>
-              {/* </button> */}
 
               <Modal
                 isOpen={isModalOpen}
                 onClose={onHandleModalClose}
                 modalText={modalText}
+                setContext={context.setNameContext}
               />
             </div>
           </div>

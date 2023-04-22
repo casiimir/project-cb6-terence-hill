@@ -1,11 +1,18 @@
+// import { CartContext } from "@/store/DataContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useContext } from "react";
 import styles from "./modal.module.scss";
 
-const Modal = ({ isOpen, onClose, modalText }) => {
+const Modal = ({ isOpen, onClose, modalText, setContext }) => {
   if (!isOpen) return null;
   // const router = useRouter();
+
+  const onHandleClick = () => {
+    localStorage.setItem("event", JSON.stringify([]));
+    setContext([]);
+  };
 
   return (
     <div className={styles.Modal}>
@@ -17,7 +24,7 @@ const Modal = ({ isOpen, onClose, modalText }) => {
           Siamo impazienti di incontrarti al tuo evento.
         </p> */}
 
-        <div className={styles.modalLink}>
+        <div className={styles.modalLink} onClick={onHandleClick}>
           <Link href="/" className={styles.modalP}>
             Torna alla home
           </Link>
