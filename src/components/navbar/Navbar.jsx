@@ -25,8 +25,9 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
 
   return (
     <div className={styles.Navbar}>
-      <form onSubmit={onHandleSubmit}>
+      <form onSubmit={onHandleSubmit} className={styles.formNavbar}>
         <input
+          className={styles.inputNavbar}
           onChange={saveSearchedInput}
           type="text"
           name="text"

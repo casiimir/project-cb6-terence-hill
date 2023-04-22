@@ -17,7 +17,7 @@
     display: none;
   }
 
-  form {
+  .formHamburger {
     display: block;
     position: relative;
     width: 100vw;
@@ -25,7 +25,7 @@
     margin-bottom: 20px;
     z-index: 10;
 
-    input {
+    .inputHamburger {
       width: 100%;
       display: block;
       outline: none;
@@ -53,7 +53,9 @@
       padding: 20px;
       width: 100vw;
       height: 100px;
-      font-size: $h1-mobile;
+      font-family: $font;
+      font-size: $h3-desktop;
+      font-weight: 500;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -62,15 +64,15 @@
     }
   }
   .homeMenuList {
-    font-family: $font;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 0 20px;
-    position: absolute;
-    bottom: 40px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    // gap: 10px;
+    // padding: 0 20px;
+    // position: absolute;
+    // bottom: 40px;
 
     .homeMenuItem {
       font-size: $body-mobile;
@@ -79,9 +81,20 @@
       justify-content: space-around;
       cursor: pointer;
       color: $white;
+      position: relative;
 
       &:hover {
         text-decoration: underline;
+      }
+
+      .dot {
+        position: absolute;
+        top: 0px;
+        right: -8px;
+        width: 10px;
+        height: 10px;
+        background-color: $orange;
+        border-radius: 50%;
       }
     }
   }

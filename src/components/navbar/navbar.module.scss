@@ -13,7 +13,7 @@
   left: 0;
   z-index: 10;
 
-  form {
+  .formNavbar {
     display: none;
   }
 
@@ -82,11 +82,11 @@
       padding: 0 40px;
     }
 
-    form {
+    .formNavbar {
       display: block;
       position: relative;
 
-      input {
+      .inputNavbar {
         width: 250px;
         display: block;
         animation-name: text;
