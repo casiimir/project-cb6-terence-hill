@@ -17,7 +17,7 @@
     display: none;
   }
 
-  form {
+  .formHamburger {
     display: block;
     position: relative;
     width: 100vw;
@@ -25,31 +25,13 @@
     margin-bottom: 20px;
     z-index: 10;
 
-    @include mobile {
-      display: block;
-      position: relative;
-      width: 100vw;
-      padding: 0 20px;
-      margin-bottom: 20px;
-      z-index: 10;
-    }
-
-    input {
+    .inputHamburger {
       width: 100%;
       display: block;
       outline: none;
       border-radius: 25px;
       border: none;
       padding: 10px 40px;
-
-      @include mobile {
-        width: 100%;
-        display: block;
-        outline: none;
-        border-radius: 25px;
-        border: none;
-        padding: 10px 40px;
-      }
     }
 
     .searchBtn {
