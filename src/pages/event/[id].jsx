@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
+import { useContext } from "react";
+import { CartContext } from "@/store/DataContext";
 
 import styles from "@/styles/pages/Event.module.scss";
 
@@ -10,15 +12,16 @@ import MainLayout from "@/layouts/mainLayout";
 import SecondaryButton from "@/components/secondaryButton";
 
 export default function EventDetails({ data }) {
+  const context = useContext(CartContext);
+
   function deleteSeconds(time) {
     let timeArray = time.split(":");
     let newTime = timeArray[0] + ":" + timeArray[1];
     return newTime;
   }
 
-  const onHandleClick = () => {
+  const addProduct = () => {
     let localStorageItems = JSON.parse(localStorage.getItem("event")) || [];
-    // localStorage.setItem("event", JSON.stringify([...localStorageItems, data]));
 
     const isProductDataInsideLocalStorage = !localStorageItems.find(
       (product) => product.id === data.id
@@ -29,12 +32,10 @@ export default function EventDetails({ data }) {
         "event",
         JSON.stringify([...localStorageItems, data])
       );
-      alert(`${data.name} added to cart`);
+      alert(`${data.name} aggiunto al carrello`);
+      context.setNameContext(JSON.parse(localStorage.getItem("event")) || []);
     } else {
-      alert(`${data.name} is already in the cart`);
-    }
-
-    if (!isProductDataInsideLocalStorage) {
+      alert(`${data.name} è già nel carrello`);
     }
   };
 
@@ -88,8 +89,6 @@ export default function EventDetails({ data }) {
               <h2 className={styles.title}>{data.name}</h2>
             </div>
           </div>
-          {/* {console.log(items)} */}
-
           <div className={styles.bottom_section}>
             <div className={styles.mainSection}>
               <div className={styles.info}>
@@ -135,11 +134,9 @@ export default function EventDetails({ data }) {
                 </div>
                 <div className={styles.price_section}>
                   <p className={styles.price}>{data.price}€</p>
-                  {/* <Link onClick={onHandleClick}> */}
-                  <div onClick={onHandleClick}>
+                  <div onClick={addProduct}>
                     <SecondaryButton text={"COMPRA IL BIGLIETTO"} />
                   </div>
-                  {/* </Link> */}
                 </div>
               </div>
             </div>
@@ -150,7 +147,6 @@ export default function EventDetails({ data }) {
                 <small className={styles.fullScreen}>
                   <a
                     href={`https://maps.google.com/maps?q=${data._embedded.venues[0].location.latitude},${data._embedded.venues[0].location.longitude}&hl=es;z=14&amp;output=embed`}
-                    // style="color:#0000FF;text-align:left"
                     target="_blank"
                   >
                     Vista schermo intero

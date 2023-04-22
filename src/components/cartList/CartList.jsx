@@ -1,27 +1,19 @@
-// import { useState, useEffect } from "react";
 import styles from "./cartList.module.scss";
+import { CartContext } from "@/store/DataContext";
+import { useContext } from "react";
 
 import CartItem from "../cartItem";
 
-const CartList = ({
-  cartContext,
-  setCartContext,
-  priceCheckout,
-  setPriceCheckout,
-}) => {
+const CartList = () => {
+  const context = useContext(CartContext);
+
   return (
     <div className={styles.CartList}>
-      {cartContext.length === 0 ? (
+      {context.nameContext.length === 0 ? (
         <p>Il tuo carrello è vuoto.</p>
       ) : (
-        cartContext?.map((event) => (
-          <CartItem
-            data={event}
-            key={event.id}
-            setCartContext={setCartContext}
-            priceCheckout={priceCheckout}
-            setPriceCheckout={setPriceCheckout}
-          />
+        context.nameContext.map((event) => (
+          <CartItem data={event} key={event.id} />
         ))
       )}
     </div>

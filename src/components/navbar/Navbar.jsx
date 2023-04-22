@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,8 +6,7 @@ import HamburgerMenu from "../hamburgerMenu";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 
 import { useRouter } from "next/router";
-import { useContext } from "react";
-import { DataContext } from "@/store/DataContext";
+import { DataContext, CartContext } from "@/store/DataContext";
 
 const Navbar = ({ showHamburger, setShowHamburger }) => {
   const router = useRouter();
@@ -22,14 +21,7 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
     router.push(`/search/${state.inputValue}`);
   };
 
-  // const [cartContext, setCartContext] = useState([]);
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const data = JSON.parse(localStorage.getItem("event")) || [];
-  //     setCartContext(data);
-  //   }
-  // }, []);
+  const context = useContext(CartContext);
 
   return (
     <div className={styles.Navbar}>
@@ -65,7 +57,11 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           <li className={styles.navItem}>
             <Link href="/cart">
               <FiShoppingCart className={styles.cartBtn} />
-              {/* <div className={cartContext.length > 0 ? styles.dot : null}></div> */}
+              <div
+                className={
+                  context?.nameContext?.length > 0 ? styles.dot : styles.notDot
+                }
+              ></div>
             </Link>
           </li>
         </ul>

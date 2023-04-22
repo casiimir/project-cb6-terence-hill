@@ -1,46 +1,47 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "@/store/DataContext";
 import Link from "next/link";
 import Image from "next/image";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "./cartItem.module.scss";
 
-const CartItem = ({
-  data,
-  setCartContext,
-  priceCheckout,
-  setPriceCheckout,
-}) => {
+const CartItem = ({ data }) => {
+  const context = useContext(CartContext);
+
   const [valueQty, setValueQty] = useState(data.qty || 1);
 
   const plusQty = () => {
     const newQty = valueQty + 1;
     setValueQty(newQty);
+
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("event")) || [];
+
     const newLocalStorageCart = localStorageCartItems.map((item) =>
       item.id === data.id ? { ...item, qty: newQty } : item
     );
+
     localStorage.setItem("event", JSON.stringify(newLocalStorageCart));
-    setPriceCheckout(priceCheckout + data.price);
+    context.setNameContext(() => newLocalStorageCart);
   };
 
   const lessQty = () => {
     const newQty = valueQty - 1;
     setValueQty(newQty);
+
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("event")) || [];
+
     const newLocalStorageCart = localStorageCartItems.map((item) =>
       item.id === data.id ? { ...item, qty: newQty } : item
     );
 
     for (let i = 0; i < newLocalStorageCart.length; i++) {
       if (newLocalStorageCart[i].id === data.id && newQty === 0)
-        newLocalStorageCart.splice(i, 1);
+        context.setNameContext(newLocalStorageCart.splice(i, 1));
     }
-
     localStorage.setItem("event", JSON.stringify([...newLocalStorageCart]));
-    setCartContext(() => newLocalStorageCart);
-    setPriceCheckout(priceCheckout - data.price);
+    context.setNameContext(() => newLocalStorageCart);
   };
 
   const removeSingleItem = () => {
@@ -49,11 +50,10 @@ const CartItem = ({
 
     for (let i = 0; i < localStorageCartItems.length; i++) {
       if (localStorageCartItems[i].id === data.id)
-        localStorageCartItems.splice(i, 1);
+        context.setNameContext(localStorageCartItems.splice(i, 1));
     }
     localStorage.setItem("event", JSON.stringify([...localStorageCartItems]));
-    setCartContext(() => localStorageCartItems);
-    setPriceCheckout(priceCheckout - data.price * data.qty);
+    context.setNameContext(localStorageCartItems);
   };
 
   return (
@@ -83,17 +83,17 @@ const CartItem = ({
       <div className={styles.priceInfo}>
         <div className={styles.quantityInfo}>
           <div className={styles.quantityContainer}>
-            <FiMinus onClick={lessQty} className={styles.minus} />
+            <FiMinus className={styles.minus} onClick={lessQty} />
             <input
               className={styles.quantity}
               readOnly
               type="text"
               value={valueQty}
             />
-            <FiPlus onClick={plusQty} className={styles.plus} />
+            <FiPlus className={styles.plus} onClick={plusQty} />
           </div>
           <div>
-            <button onClick={removeSingleItem} className={styles.button}>
+            <button className={styles.button} onClick={removeSingleItem}>
               Rimuovi
             </button>
           </div>
