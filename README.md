@@ -55,7 +55,23 @@ This approach ensured that website content is easily accessible and readable on 
 <div>  <img src="./public/img/phonemock.jpg" alt="EventHub" width=1200/>   </div>
 </div>
 
+<h2>Design</h2>
+<p>We designed the website from scratch using the tool Figma. Besides, we also used the Css-postprocessor SASS and Css Modules.
+</p>
+<div align="center">
+<div>  <img src="./public/img/eventhub_figma.png" alt="EventHub" width=1200/>   </div>
+</div>
 
+<h2>3D Implementation</h2>
+
+<p>We built the About page using the following technologies: <br>
+- Three.js <br>
+- React/Fiber <br>
+- React Drei 
+</p>
+<div align="center">
+<div>  <img src="./public/img/mockavatar.jpg" alt="EventHub" width=1200/>   </div>
+</div>
 
 ## How to run it:
 
