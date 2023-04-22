@@ -1,13 +1,14 @@
 import styles from "./hamburgerMenu.module.scss";
 import Link from "next/link";
-// import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiSearch, FiArrowRight } from "react-icons/fi";
 
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { DataContext } from "@/store/DataContext";
+import { DataContext, CartContext } from "@/store/DataContext";
 
 const HamburgerMenu = () => {
+  const context = useContext(CartContext);
+
   const router = useRouter();
 
   const { state, dispatch } = useContext(DataContext);
@@ -32,6 +33,24 @@ const HamburgerMenu = () => {
         />
         <FiSearch className={styles.searchBtn} />
       </form>
+      <ul className={styles.homeMenuList}>
+        <Link href={"/events"}>
+          <li className={styles.homeMenuItem}>Scopri gli eventi</li>
+        </Link>
+        <Link href={"/about"}>
+          <li className={styles.homeMenuItem}>Chi siamo</li>
+        </Link>
+        <Link href={"/cart"}>
+          <li className={styles.homeMenuItem}>
+            <p>Carrello</p>
+            <div
+              className={
+                context?.nameContext?.length > 0 ? styles.dot : styles.notDot
+              }
+            ></div>
+          </li>
+        </Link>
+      </ul>
       <ul className={styles.menuList}>
         <Link href={"/events/concert"}>
           <li className={styles.menuItem}>
@@ -48,17 +67,6 @@ const HamburgerMenu = () => {
           <li className={styles.menuItem}>
             Sport <FiArrowRight />
           </li>
-        </Link>
-      </ul>
-      <ul className={styles.homeMenuList}>
-        <Link href={"/events"}>
-          <li className={styles.homeMenuItem}>Scopri gli eventi</li>
-        </Link>
-        <Link href={"/about"}>
-          <li className={styles.homeMenuItem}>Chi siamo</li>
-        </Link>
-        <Link href={"/cart"}>
-          <li className={styles.homeMenuItem}>Carrello</li>
         </Link>
       </ul>
     </div>
