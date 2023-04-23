@@ -13,7 +13,7 @@ export default function Text() {
     const font = new FontLoader().parse(Anton);
   return(
         <mesh>
-            <textGeometry  
+            <textGeometry  ClassName= {styles.text3d}
             args={['La tua destinazione \nper i migliori eventi',  
             {font, size: 10, height: 2,}]} 
             />
