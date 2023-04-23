@@ -5,7 +5,12 @@
   height: 100vh;
   position: relative;
   background-color: $dark;
-
+  @include mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
   
   .images {
     width: 100vw;
