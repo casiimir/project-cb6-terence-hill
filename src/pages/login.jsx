@@ -1,6 +1,7 @@
 import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
 import styles from "@/styles/pages/login.module.scss";
+import Image from "next/image";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { auth } from "../../firebase";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
@@ -33,10 +34,17 @@ export default function Login() {
       </Head>
       <MainLayout>
         <div className={styles.Login}>
+          <Image
+            className={styles.img}
+            src="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="login image"
+            width={600}
+            height={600}
+          />
           {user ? (
             <div className={styles.loginContext}>
               <p className={styles.loginText}>
-                {"Benvenuto, " + user.displayName}
+                {"Benvenuto/a, " + user.displayName}
               </p>
               <div className={styles.buttons}>
                 <Link href="/">
