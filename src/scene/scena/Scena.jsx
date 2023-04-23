@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+// import { OrbitControls } from '@react-three/drei';
 import Text3d from '@/components/text3d/Text3d';
 import styles from "./scena.module.scss";
 
@@ -35,7 +35,7 @@ export default function Scena() {
           </group>
          <Suspense fallback={null}>
          </Suspense>
-         <OrbitControls />
+         {/* <OrbitControls /> Non permette di scrollare*/} 
       </Canvas>
    );
 }
