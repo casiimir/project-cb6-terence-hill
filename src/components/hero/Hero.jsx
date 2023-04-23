@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Scena from "@/scene/scena/Scena";
 import styles from "./hero.module.scss";
 import Image from "next/image";
 
@@ -32,6 +32,7 @@ const Hero = () => {
 
   return (
     <div className={styles.Hero}>
+      <Scena />
       <Image
         className={styles.images}
         src={images[currentImageIndex]}
@@ -41,11 +42,13 @@ const Hero = () => {
         // layout="fill"
         // objectFit="cover"
       />
-      <h1 className={styles.title}>
+      {/* <h1 className={styles.title}>
         La tua destinazione <br /> per i migliori eventi.
-      </h1>
+      </h1> */}
+      
+      
     </div>
   );
 };
-
+console.log(Scena);
 export default Hero;
