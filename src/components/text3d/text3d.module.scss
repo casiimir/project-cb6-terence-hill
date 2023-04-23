@@ -1,4 +1,9 @@
 .text3d{
     
-
+    @include mobile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
 };
