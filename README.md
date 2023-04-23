@@ -1,13 +1,6 @@
-
-
-
 <div align="center">
   <img src="./public/img/homepage.jpg" alt="EventHub" width=1000/>
 </div>
-
-
-
-
 
 <h2 style="text-align: center;">EventHub - your destination for the best events </h2>
 
@@ -15,13 +8,11 @@
 <a href="https://project-cb6-terence-hill.vercel.app/">Demo</a>
 <h4 {align="center"}> Created at Edgemony Coding Bootcamp #6 </h4>
 
-
 <br>
 
 <div align="center">
   <img src="./public/img/mockup_desktop.jpg" alt="EventHub" width=1200/>
 </div>
-
 
 <h2>Technologies used:</h2>
 <p>Our platform was developed using the following technologies:</p>
@@ -62,6 +53,11 @@ This approach ensured that website content is easily accessible and readable on 
 <div>  <img src="./public/img/eventhub_figma.png" alt="EventHub" width=1200/>   </div>
 </div>
 
+<h2>Black logo version</h2>
+<div>
+<img src="./public/img/black-logo.png"/>
+<div>
+
 <h2>3D Implementation</h2>
 
 <p>We built the About page using the following technologies: <br>
@@ -89,6 +85,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 <hr>
 
 ## Credits:
+
 <ul>
   <li>
     <a href="https://www.linkedin.com/in/stefaniarapisarda/">
