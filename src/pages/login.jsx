@@ -2,7 +2,7 @@ import Head from "next/head";
 import MainLayout from "@/layouts/mainLayout";
 import styles from "@/styles/pages/login.module.scss";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
