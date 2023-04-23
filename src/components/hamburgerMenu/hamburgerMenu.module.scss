@@ -18,7 +18,10 @@
   }
 
   .formHamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     position: relative;
     width: 100vw;
     padding: 0 20px;
@@ -32,6 +35,20 @@
       border-radius: 25px;
       border: none;
       padding: 10px 40px;
+    }
+
+    .loginBtn {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      border-radius: 25px;
+      background-color: $orange;
+      color: $white;
+      font-weight: 700;
+      height: 35px;
+      border: 0;
     }
 
     .searchBtn {
