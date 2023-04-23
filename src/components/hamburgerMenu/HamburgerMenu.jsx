@@ -1,6 +1,6 @@
 import styles from "./hamburgerMenu.module.scss";
 import Link from "next/link";
-import { FiSearch, FiArrowRight } from "react-icons/fi";
+import { FiSearch, FiArrowRight, FiLogIn } from "react-icons/fi";
 
 import { useRouter } from "next/router";
 import { useContext } from "react";
@@ -33,6 +33,12 @@ const HamburgerMenu = () => {
           placeholder="Cerca artista"
         />
         <FiSearch className={styles.searchBtn} />
+        <Link href={"/login"}>
+          <div className={styles.loginBtn}>
+            <FiLogIn className={styles.icon} />
+            <p className={styles.homeMenuItem}>Entra</p>
+          </div>
+        </Link>
       </form>
       <ul className={styles.homeMenuList}>
         <Link href={"/events"}>
@@ -41,6 +47,7 @@ const HamburgerMenu = () => {
         <Link href={"/about"}>
           <li className={styles.homeMenuItem}>Chi siamo</li>
         </Link>
+
         <Link href={"/cart"}>
           <li className={styles.homeMenuItem}>
             <p>Carrello</p>

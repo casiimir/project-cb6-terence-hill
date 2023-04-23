@@ -3,7 +3,7 @@ import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import HamburgerMenu from "../hamburgerMenu";
-import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import { FiSearch, FiShoppingCart, FiLogIn } from "react-icons/fi";
 
 import { useRouter } from "next/router";
 import { DataContext, CartContext } from "@/store/DataContext";
@@ -54,6 +54,11 @@ const Navbar = ({ showHamburger, setShowHamburger }) => {
           </li>
           <li className={styles.navItem}>
             <Link href="/about">Chi siamo</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link className={styles.loginIcon} href="/login">
+              <FiLogIn />
+            </Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/cart">
