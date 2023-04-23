@@ -1,0 +1,96 @@
+.Login {
+  width: 100%;
+  font-family: $font;
+  margin: 130px 0;
+  display: flex;
+  justify-content: center;
+
+  .loginContext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+
+    .loginText {
+      font-size: $h1-mobile;
+      font-weight: 500;
+
+      @include tablet {
+        font-size: $h3-desktop;
+      }
+
+      @include desktop {
+        font-size: 3em;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .exploreAppBtn {
+        background-color: $orange;
+        color: $white;
+        font-weight: 700;
+        padding: 8px 20px;
+        border: 0;
+        border-radius: 20px;
+        font-size: $h3-mobile;
+        cursor: pointer;
+      }
+
+      .logOutBtn {
+        background-color: $mid-grey;
+        color: $white;
+        font-weight: 700;
+        padding: 8px 20px;
+        border: 0;
+        border-radius: 20px;
+        font-size: $h3-mobile;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      font-size: 35px;
+      color: $orange;
+      @include tablet {
+        font-size: $h3-desktop;
+      }
+
+      @include desktop {
+        font-size: 3em;
+      }
+
+      .colorTitle {
+        color: $white;
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 12px 12px;
+      border: 0;
+      border-radius: 20px;
+      font-size: $h3-mobile;
+      font-weight: 700;
+      cursor: pointer;
+
+      .googleIcon {
+        font-size: 30px;
+      }
+    }
+  }
+}
