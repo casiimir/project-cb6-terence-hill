@@ -32,6 +32,7 @@
     <li>UseReducer & UseContext hooks</li>
     <li>GIT / GitHub</li>
     <li>Figma</li>
+    <li>Firebase</li>
   </ul>
 
 <br>
