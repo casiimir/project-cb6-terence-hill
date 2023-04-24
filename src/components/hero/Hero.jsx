@@ -32,7 +32,8 @@ const Hero = () => {
 
   return (
     <div className={styles.Hero}>
-      <Scena />
+      <Scena 
+        className={styles.title}/>
       <Image
         className={styles.images}
         src={images[currentImageIndex]}
