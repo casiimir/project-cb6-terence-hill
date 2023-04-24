@@ -6,7 +6,8 @@
   position: relative;
   background-color: $dark;
   @include mobile {
-    width: 100%;
+    width: 100vw;
+    height:100vh;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -20,15 +21,18 @@
   
 
   .title {
-    width: 100%;
-    position: absolute;
-    top: 200px;
-    left: 0px;
-    font-family: "Anton", sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 100px;
-    letter-spacing: 0.15rem;
+    display:flex;
+    object-fit: cover;
+    align-items: center;
+    width: 100vh;
+    // position: absolute;
+    // top: 200px;
+    // left: 0px;
+    // font-family: "Anton", sans-serif;
+    // text-transform: uppercase;
+    // text-align: center;
+    // font-size: 100px;
+    // letter-spacing: 0.15rem;
 
     @include tablet {
       font-size: 80px;
